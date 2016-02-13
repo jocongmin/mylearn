@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src='angular-1.4.7/angular.js'></script>
+</head>
+
+<body ng-app="app">
+    <div class="one" ng-controller="myCtrl">
+        <span ng-bind="val"></span>
+        <input type="text" ng-model='testnum|number:2'>
+        <!-- //这里可以通过过滤器number 保留位数 -->
+    </div>
+</body>
+<script type="text/javascript">
+var app = angular.module('app', []);
+app.filter('numfix', function() {
+    return function(it, m) { //可以从这里传入参数。
+        var num = it.toFixed(m); //保留2位小数
+        var num2 = parseFloat(num); //转化为数据格式，然后返回。
+        return num2;
+    }
+});
+app.controller('myCtrl', ['$scope', '$filter', function($scope, $filter) {
+    var num = 68;
+    $scope.val = $filter('number')(num, 2); //过滤后的number数据是一个字符数据格式，不是数据格式。
+    //这里个人觉得不适合用$filter方式来处理数据的保留位数，应该用toFixed函数来处理。
+    var type = $scope.val;
+    type = parseFloat(type); //可以通过parseFloat将字符格式的数据转化为数字格式的数据。
+    console.log(typeof(type)); //typeof函数可以用来测试数据的格式。
+    var num2 = 45645;
+    num2 = num2.toFixed('2');
+    console.log(num2);
+    console.log(typeof(num2)); //这里说明toFixed函数处理出来的数据也是字符串格式，还是需要处理才能转化为数据格式。
+    var num3 = 46465.05;
+    num4 = $filter('numfix')(num3, 1); //这里调用了自制的numfix过滤器来过滤数据。
+    console.log(num4, typeof(num4));
+    $scope.testnum = 56454;
+}]);
+</script>
+
+</html>
