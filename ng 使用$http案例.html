@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src='/think/Public/angular.min.js'></script>
+</head>
+
+<body ng-app="app">
+    <div class="box" ng-controller="myCtrl">
+        <button id="btn" ng-click="aler()"></button>
+    </div>
+</body>
+<script type="text/javascript">
+var app = angular.module('app', []);
+app.controller('myCtrl', ['$scope','$http',function($scope,$http) {
+	$scope.aler=function(){
+		var name="dslkdfjskdjf";
+		$http({                          //ng $http ajax 方法
+			method:'GET',      //传递方法
+			url:'__URL__/nghttp',      //地址
+			params:{ 					//被传递的数据，params 是get请求专用的数据请求方法。
+				'username':name     //这里name是一个变量，所以不需要加双引号或者逗号。如果是字符串就需要加了。 另外这里的数据格式json数据格式。
+			}
+		}).success(function(data){   //成功执行的函数。
+			alert(data);
+		}).error(function(data){   //失败执行的函数。
+			alert(data);
+		})
+	}
+}])
+</script>
+
+</html>
