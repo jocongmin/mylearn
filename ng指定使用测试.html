@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src='angular-1.4.7/angular.min.js'></script>
+</head>
+
+<body ng-app="app">
+    <div class="box" ng-controller="myCtrl">
+        <span ng-bind="name"></span>
+        <br>
+        <box>
+            <hello></hello>
+        </box>
+    </div>
+    <br>
+    <div class="box2" ng-controller="eventCtrl">
+        <button ng-click='eventGo()'></button>
+        <div ng-hide='showIf==false'>go</div>   <!-- ng-hide和ng-show都是隐藏和显示的判断，需要条件表达式 -->
+    </div>
+</body>
+<script type="text/javascript">
+var app = angular.module('app', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = 'sdlkfjsdklfj';
+});
+app.directive('hello', function() {
+    return {
+        restrict: 'AE', //必写项目，表示模板保护的数据类型。
+        replace: true, //必写项目。表示模板是否替换自定义标签。
+        template: "<span>sdkfjdkfj<span ng-bind='ttt'></span></span>", //这里写入要替换的模板。  模板标签的替换需要同样只能是一个标签，不能有2个并行的标签，只能单独一个标签，然后单独的标签内部可以写入多标签的内容。
+        link: function() {
+
+        }
+    }
+});
+app.directive('box', function() {
+    return {
+        restrict: 'AE',
+        replace: true,
+        transclude: true, //如果自定义标签内部有其他内容，那么如果要嵌套的话，需要写入这个参数。
+        template: '<div><span>6546545</span><div ng-transclude></div></div>', //ng-transclude表示标签内部的内容存放的地方。
+        link: function($scope) {
+            $scope.ttt = 'sdlkfjsdkf';
+        }
+    }
+});
+app.controller('eventCtrl', function($scope) {
+    $scope.showIf = true;
+    $scope.eventGo = function() {      //本例用ng——click来循环实现这个事件，其中用true和false的循环来实现循环事件的目的，这类似于toggle事件。
+        if ($scope.showIf == false) {
+            $scope.showIf = true;
+        } else {
+            $scope.showIf = false;
+        }
+    };
+})
+</script>
+
+</html>
