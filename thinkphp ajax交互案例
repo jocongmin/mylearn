@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript" src="cookie.js"></script>
+</head>
+<style type="text/css">
+div {
+    margin-bottom: 10px;
+}
+</style>
+
+<body>
+    <form action="" method="post">
+        <select name="which_title" onchange="which_change()" id="which">
+            <foreach name="all" item="vo">
+                <option>{$vo.title}</option>
+            </foreach>
+        </select>
+        <input type="submit">
+        <span>您现在看的文章题目是：{$title}</span>
+    </form>
+    <div class="title">
+        {$title}
+    </div>
+    <div class="author">
+        {$author}
+    </div>
+    <div class="content">
+        {$content}
+    </div>
+    <script type="text/javascript">
+    function which_change() {
+        var which=$('#which').val();
+        $.ajax({
+        	url:'__APP__/home/News/article',
+        	data:{'which':which},
+        	datatype:'text',
+        	method:'post',
+        	success:function(msg){
+        		alert(msg);
+        	}
+        })
+    }
+    </script>
+</body>
+
+</html>
