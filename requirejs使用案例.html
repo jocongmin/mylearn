@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/require.js" data-main="js/main.js"></script>
+    <script type="text/javascript">
+    require(['app'],function(fnp){
+    	console.log(fnp.name);
+    });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+
+
+define(['jquery'],function($){
+	var fn=function(){
+		this.name='sdflkjdskfjds';
+		this.title='sdflkjsdfkjd';
+		this.fnOne=function(){
+			console.log('fnOne-sflkdjfksdjfklsdjf');
+		}
+	}
+	require(['jquery'],function(){
+		console.log('new rg');
+	})
+	var fnp=new fn();
+	return fnp;
+});
+
+
+
+requirejs.config({
+    paths: {
+        "jquery": "jquery",
+        "app": "app"
+    }
+});
+
+
+
+define(['jquery'],function($){
+	var fn=function(){
+		this.name='sdflkjdskfjds';
+		this.title='sdflkjsdfkjd';
+		this.fnOne=function(){
+			console.log('fnOne-sflkdjfksdjfklsdjf');
+		}
+	}
+	require(['jquery'],function(){
+		console.log('new rg');
+	})
+	var fnp=new fn();
+	return fnp;
+});
