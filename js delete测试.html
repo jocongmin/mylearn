@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title> </title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+function demo(){
+	var k='sdklfjsdfkj';
+	console.log(k);
+}
+demo();
+delete demo;
+demo();  //这里会依然正常运行，所以delete不能直接删除变量，包括变量函数。
+var k={
+	name:'sdfkljdsfkjds',
+	fn:function(){
+		console.log('fn');
+	}
+}
+console.log(k.name);
+delete k.name;
+console.log('123',k.name);
+k.fn();
+delete k.fn;   //这里说明delete可以删除变量的对象属性。
+k.fn();   // k.fn is not a function
+</script>
+
+</html>
