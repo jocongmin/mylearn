@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+
+<body>
+    <div class="test">
+        <input type="text" id="ipt">
+        <button id="btn" onclick="ajaxDemo()"></button>
+    </div>
+    <script type="text/javascript">
+    function ajaxDemo() {
+        var val = $('#ipt').val();
+        $.ajax({
+            type: 'post',
+            url: 'http://localhost/think/index.php/Home/ajax/ajax_test',    //url地址需要以thinkphp的地址方式进行书写
+            //这样才能真正地访问到thinkphp模块里的函数方法功能。
+            data: {
+                post_data: val
+            },
+            datatype:'json',
+            error: function(data) {
+                alert('出现错误');
+            },
+            success: function(data) {
+                alert(data);
+            }
+        })
+    }
+    </script>
+</body>
+
+</html>
