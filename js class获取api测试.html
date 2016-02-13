@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        slkfjskfj
+    </div>
+    <button class="btn">cskjfd</button>
+</body>
+<script type="text/javascript">
+function getClass(dom, cla) {
+    var el = document.getElementsByTagName(dom); //这里用来获取元素数组
+    var l = el.length;
+    for (var i = 0; i < l; i++) {
+        var that = el[i];
+        console.log(that);
+        var _class = that.getAttribute('class'); //通过循环遍历来获取元素数组的class对象
+        if (_class == cla) { //判断是否目标class
+            return that;
+        }
+    }
+}
+var el=new object();
+el.prototype = {
+    hideit: function(dom) {
+        var el = dom;
+        el.style.display = 'none';
+    }
+}
+
+function hide() {
+    var el = getClass('div', 'box'); //调用封装的函数来获取class
+    el.addEventListener('click', function() {
+        el.hideit(el);
+    })
+}
+hide();
+
+function show() {
+    var el = getClass('button', 'btn');
+    el.onclick = function() {
+        var showEl = getClass('div', 'box');
+        showEl.style.display = 'block';
+        console.log(this); //this 永远指向调用它的直接对象。
+    }
+}
+show();
+</script>
+
+</html>
