@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='angular-1.4.7/angular.min.js'></script>
+</head>
+<body ng-app='app'>
+	<div class="test" ng-controller="myCtrl">
+	</div>
+</body>
+<script type="text/javascript">
+	var app=angular.module('app', []);
+	app.controller('myCtrl', ['$scope','$cacheFactory',function($scope,$cacheFactory){
+		var cache=$cacheFactory('myCache');    //这里建立一个缓存功能，缓存名为myCache。
+		cache.put('name','zhou');    //这里是开始使用myCache这个缓存空间，put可以添加缓存，参数分别为键和值。
+		console.log(cache.get('name'));   //这里是获取缓存里name的东西，获取其值。
+	}])
+</script>
+</html>
