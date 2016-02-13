@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="del">55</div>
+    <button id="btn" onclick="demoFour()"></button>
+</body>
+<script type="text/javascript">
+function demoOne() {
+    this.name = 'sdlfkjsdkfjksd';
+}
+demoOne();
+
+function demoTwo() {
+    console.log(this.name); //这里可以打印出this.name说明this具有全局属性，这是因为this总是指向window对象，所以具有全局性。
+}
+demoTwo();
+
+function demoThree() {
+    var e = document.getElementById('del');
+    e.remove(); //remove()在js中可以用来删除元素。
+}
+
+function demoFour() {
+    var e = document.getElementById('del');
+    var el = document.createElement('span');
+    el.innerHTML = 'sdfjskdjfkds';
+    e.appendChild(el);
+}
+
+function demoFive(val) {
+    if (val == 0)
+        console.log('if');  //这里if如果没有中括号，那么这里只能运行一句程序。运行多句程序就会出现bug。
+    else
+        console.log('else');
+    console.log('ttt');   //这里都是会输出的，因为这里不属于else的程序。
+}
+demoFive(0);
+</script>
+
+</html>
