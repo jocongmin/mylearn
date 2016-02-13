@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn"></button>
+</body>
+<script type="text/javascript">
+	function actOne(){
+		console.log('one');
+	}
+	function actTwo(){
+		console.log('two');
+	}
+	var act=actOne;    //这样act可以继承下actOne的函数程序，但是还不会运行，只有加了函数运行符()才会运行。
+	var $if=false;
+	if($if){
+		act();   //act() 这样的形式就可以运行从actOne的函数程序了。
+	}else{
+		act=null;
+	}
+</script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="test"></button>
+</body>
+<script type="text/javascript">
+	function demo(){
+		alert('sdflkjdskfjd')
+	}
+	function _touch(){
+		var btn=document.getElementById('#test');
+		btn.ontouchstart=function(){
+			demo();
+		}
+	}
+	_touch();
+</script>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function demo(){
+		sessionStorage.book="slkdfjskdjfkasdhfksdlkfjslk斯大林会计分录快速搭建菲利克斯的肌肤轮廓地方就是绿卡江东父老开始就阿迪斯大林客服经理深刻的肌肤轮廓圣诞节法兰克大傻离开警匪";
+	}
+	demo();
+	function _get(){
+		var getBook=sessionStorage.book;
+		alert(getBook);
+	}
+	function _alert(){
+		var getBook=sessionStorage.book;
+		alert(getBook);
+	}
+	_alert();
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function demo(){
+		document.cookie="name=slkdjfdksj";
+	}
+	demo();
+	
+</script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function demo(){
+		this.name='sdlkfjskldjf';
+		this.title='skdfjlksdjf';
+	}
+	function _call(){
+		demo.call(this);
+		console.log(this.name);  //经过call(this)后这里就可以直接访问this.name了，相当于_call函数也具有demo的this的对象了。
+	}
+	var hshu=new _call();
+	console.log(hshu.name);  //这样就可以实例化并且得到对象了。
+</script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    	function demo(){
+    		var kk=5;
+    	}
+    	demo();
+    	/*console.log(kk); */ //这里解读不到kk，所以输出  kk is not defined；  会报错
+    	var tt;
+    	console.log(tt);   //这里可以解读到有tt这个变量，但是tt为赋值，所以输出的是undefined。
+    	var cc=null;
+    	console.log(cc);  //这里输出的是null，这表示变量是一个空对象。
+    	console.log(typeof(cc));  //这里输出object。
+    	
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function demo(){
+		this.run=function(){
+			console.log(8);
+		}
+	}
+	/*demo();
+	demo=null;
+	demo();*/
+	var $demo=new demo();
+	$demo.run();
+	$demo=null;   //这里如果函数名如果重新赋值为一个空对象，那么接着再读取原来的函数内容就不能实现了。
+	$demo.run();
+</script>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+function _json() {
+    var $json = [{ //这里说明json数据格式，数组可以包含多个对象。
+        'name': 'sdflksdfjksd',
+        'title': 'sdfsdlkfjksdj'
+    }, {
+        'ttt': 'sdlkfjsdkfj',
+        'ccc': 'sdlfkjsdkfjdsk'
+    }, {
+        'kkm': 'sdflksdlkfjksdj',
+        'kkc': 'sdfkjsdlkfjsdkfj'
+    }];
+    var kkm = $json[0].name;
+    console.log(kkm);
+    var $json2 = [{
+        'name': 'sdflksdfjksd',
+        'title': 'sdfsdlkfjksdj'
+    }, {
+        'ttt': 'sdlkfjsdkfj',
+        'ccc': 'sdlfkjsdkfjdsk'
+    }, {
+        'kkm': 'sdflksdlkfjksdj',
+        'kkc': 'sdfkjsdlkfjsdkfj'
+    }, {
+        'array': [{ //这里说明对象的子项目的值可以是多维数组。
+            'ttj': '465sdlkfjsfkjsd',
+            'cms': 'sdflkjsdlkfj'
+        }, {
+            'fkd': 'sdlkfjsdlkfj',
+            'flks': 'sdlkfjdkfj'
+        }]
+    }];
+    var conJson2 = $json2[3].array[0].ttj;
+    console.log(conJson2);
+};
+_json();
+</script>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var arr=[0,1,2,3,4,5];
+	var arr2=[6,7,8,9];
+	arr.push(6,7,8);   //这里说明push只能追加给数组单独一个子项或多个子项。不能直接追加数组。
+	console.log(arr); 
+</script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var kk=this;
+	console.log(kk);
+	function demo(){
+		var tt=this;    //this一般指的是window对象
+		console.log(tt);
+		this.name="dskljfksdjfsd";
+		console.log(this);
+	};
+	demo();
+	var $demo=new demo();   
+	console.log($demo);
+</script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<script type="text/javascript" src='zepto.min.js'></script>
+	<script type="text/javascript" src='zepto.touch.min.js'></script>
+</head>
+<style type="text/css">
+	button{
+		width:160px;
+		height: 140px;
+		margin:0 auto;
+		margin:60px;
+		display: block;
+	}
+</style>
+<body>
+	<button id="btn1"></button>
+	<button id="btn2"></button>
+	<button id="btn3"></button>
+	<button id="btn4" onclick='touchOne()'></button>
+	<button id="btn5" ontouchstart='touchTwo()'></button>   <!-- ontouchstart可以在手机中使用生效，但是在电脑端不生效 -->
+	<button id="btn6" ontap='touchThree()'></button>   <!-- 这里tap事件不会生效，这说明tap时间只能在js中的监听中使用和zepto对象中使用。 -->
+</body>
+<script type="text/javascript">
+	function touchOne(){
+		alert('touchOne');
+	};
+	function touchTwo(){
+		alert('touchTwo');
+	};
+	function touchThree(){
+		alert('touchThree');
+	};
+	function test(){
+		var btnOne=document.getElementById('btn1');
+		btnOne.addEventListener('touchstart',function(){
+			alert('touchOne');
+		});
+		var btnTwo=document.getElementById('btn2');
+		btnTwo.addEventListener('touchend',function(){
+			alert('touchTwo');
+		});
+		var btnThree=document.getElementById('btn3');
+		btnThree.addEventListener('tap',function(){   //实验证明tap事件通过js的监听事件的方法进行使用。
+			alert('touchThree');   
+		})
+		
+	};
+	test();
+</script>
+<!-- 上面的案例说明click事件在移动端使用的话，会产生延迟现象，大约300毫秒。但是touch和tap都不会有很大的延迟，几乎是同步的。
+但是touch去tap的区别是touchstart是触摸还没离开就已经触发事件，touchend是手指离开后才触发事件，tap是模拟click事件，但是，不会有click的延迟现象，触发的阶段是touchstart之后-+-touchend之时，实验表明touchend和tap几乎差不多。 -->
+<!-- 这里还需要说明的是tap的使用前提是需要zepto的支持，不能独立使用。 -->
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	    name='sdkfjskdjfk';
+	    function demo(){
+	    	var name;
+	    	console.log(name);
+	    }
+	    demo();
+	    function demo2(){
+	    	console.log(name);   //输出undefined。
+	    	var name;       //var 在函数内部具有全局性，var 变量后，变量将在函数内部重新定义。
+	    }
+	    demo2();
+	    function demo3(){
+	    	var name2=name;     //变量的引用局部化案例。
+	    	console.log(name);
+	    	console.log(name2);
+	    }
+	    demo3();
+	    function demo4(){
+	    	var name='6465';    //var name 后那么name在函数内部的重新定义，其重新赋值不会影响外部全局的值。
+	    	console.log(name);
+	    }
+	    demo4();
+	    console.log(name);
+	</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function demo() {
+        return 6, 5, 4; //这里只能返回最后一个数据。
+        return 5; //这里将不能返回，只能返回第一个return。
+    }
+    var a = demo();
+    console.log(a);
+
+    function demo2() {
+        try {
+            demo();
+            throw('sdlkfskjf')
+        } catch (e) {
+            alert(e.name + ": " + e.message);
+        }
+    }
+    demo2();
+    </script>
+</body>
+
+</html>
+
+</html>
