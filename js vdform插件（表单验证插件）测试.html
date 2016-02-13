@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+
+<body>
+    <form id="testform">
+        <input type="text" name="Name" validata-options="validType:'Require|Chinese',msg:'不能为空|真实姓名只允许中文,并且大于两个字'">
+        <br>
+        <input type="text" name="QQ" validata-options="required:false,validType:'QQ',msg:'QQ号码不存在'">
+        </td>
+    </form>
+</body>
+<script type="text/javascript" src='js/vdform.js'></script>
+<script>       
+$('#testform').checkForm();
+</script>
+
+</html>
