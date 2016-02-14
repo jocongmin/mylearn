@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.js"></script>
+</head>
+
+<body>
+    <div class="one">sdfsdf</div>
+    <script type="text/javascript">
+    $(function() {
+        var el = $('.one')[0];  //这样就可以利用jq选择器返回js对象，从而可以实现js方法
+        el.onclick = function() {
+            this.innerHTML = 'SDKFSKLDJFSDFSDF'; 
+        }
+    })
+    </script>
+    <script>
+    document.oncontextmenu = new Function("return false")  //这里是让网页右击键失效
+    document.onselectstart = new Function("return false")  //这里是让网页屏幕选择功能失效
+    </script>
+</body>
+
+</html>
