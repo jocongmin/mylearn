@@ -1,10 +1,10 @@
- public function actionPages()
+public function actionPages()
     {
-        $sql = "select * from myuser";
+        $sql = "select * from myuser";//一下代码基本上直接复制即可，这里写入要分页的表的查询字段即可
         $criteria = new CDbCriteria();
         $result = Yii::app()->db->createCommand($sql)->query();
         $pages = new CPagination($result->rowCount);
-        $pages->pageSize = 2;
+        $pages->pageSize = 2; //分页数设置
         $pages->applyLimit($criteria);
         $result = Yii::app()->db->createCommand($sql . " LIMIT :offset,:limit");
         $result->bindValue(':offset', $pages->currentPage * $pages->pageSize);
@@ -15,7 +15,6 @@
             'pages' => $pages,
         ));
     }
-    
 ///////view
   <!doctype html>
 <html lang="en">
