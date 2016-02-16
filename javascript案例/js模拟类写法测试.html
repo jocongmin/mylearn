@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var c={
+		fn1:function(){
+			var k=1;
+			return k;
+		},
+		fn2:function(){
+			var t=c.fn1();
+			if(t==1){
+				alert('sdflksjdf');
+			}else{
+				alert('ccccccccc');
+			}
+		},
+		fn3:function(){
+			c.fn2();
+		}
+	};
+	/*c.fn3();*/
+	var t={
+		fn1:function(){
+			var k=t.fn2();  //这里说明可以调用到下面的函数，能够读取的到说明其内容的归属性（归属性作用域）。
+			if(k==1){
+				alert('tsdkfjdkjfd');
+			}else{
+				alert('sdflkdsjfds');
+			}
+		},
+		fn2:function(){
+			var o=1;
+			return o;
+		},
+		fn3:function(){
+			
+		}
+	};
+	t.fn1();
+</script>
+</html>
