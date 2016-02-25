@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box" id="box"></div>
+</body>
+<script type="text/javascript">
+	function demo(){
+		var t=dsfsdfds;
+		var el=document.getElementById('box');
+		el.innerHTML='SDLKFJDSKLF';
+	}
+	try{
+		demo();//如果函数内部有错误，则不运行函数，只直接报错函数的错误内容。
+		//如果函数内部没有出现错误，函数的会被运行，并呈现结果。
+	}catch(e){
+		alert(e.message);
+		alert(e.name);
+	}
+</script>
+</html>
