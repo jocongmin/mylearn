@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box" id="box"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+</body>
+<script type="text/javascript">
+	var t={
+		$class:function(t){
+			var all=document.getElementsByTagName('*');
+			//console.log(all);
+			for(var n in all){
+				if(all[n].getAttribute('class')==t){ //通过getAttribute来获取class对应的元素也是一种方法
+					console.log(all[n]);
+					all[n].innerHTML='get it'; //成功运行。
+				}
+			}
+		};
+		$id:function(d){
+
+		};
+	};
+	t.demo('box2');
+</script>
+<script type="text/javascript">
+	function demo(){
+		var el=document.getElementById('box');
+		el.innerHTML='SDLKFJDSKLF';
+	}
+	try{
+		demo();//如果函数内部有错误，则不运行函数，只直接报错函数的错误内容。
+		//如果函数内部没有出现错误，函数的会被运行，并呈现结果。
+	}catch(e){
+		alert(e.message);
+		alert(e.name);
+	}
+</script>
+</html>
