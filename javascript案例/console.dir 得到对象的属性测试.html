@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box" id="box"></div>
+	<div class="box2"></div>
+	<div class="box3">3</div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+</body>
+<script type="text/javascript">
+	var t={
+		$class:function(t){
+			var all=document.getElementsByTagName('*');
+			//console.log(all);
+			for(var n in all){
+				if(all[n].getAttribute('class')==t){ //通过getAttribute来获取class对应的元素也是一种方法
+					//console.log(all[n]);
+					return all[n];
+				}
+			}
+		},
+		$dom:function(){
+			var box5=t.$class('box5');
+			//console.log(box5);
+			var c=document.createElement('span');
+			c.innerHTML='追加子元素测试';
+			box5.appendChild(c);
+		},
+		$pre:function(){
+			var box4=t.$class('box4');
+			var m=box4.previousElementSibling;
+			console.dir(m);//console.dir()可以打印出对象的子属性值对象
+		}
+	};
+	t.$dom();
+	t.$pre();
+</script>
+</html>
