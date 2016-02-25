@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn" onclick="save(event)" ondragstart="test(event)" draggable='true'>btn</button>
+</body>
+<script type="text/javascript">
+function save(e) {
+    var btn = document.getElementById('btn');
+    var c = e.dataTransfer;
+    console.log(c);  //无输出结果
+    console.dir(c);
+};
+
+function test(e) {
+    var c = e.dataTransfer;//说明dataTransfer只适合在拖动事件中使用，其他事件的场合一般用不了
+    console.log(c);  //可以使用
+    console.dir(c);
+}
+</script>
+
+</html>
