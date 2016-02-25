@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+.box {
+    width: 150px;
+    height: auto;
+    min-height: 50px;
+    border: 1px solid #ddd;
+}
+
+.box2 {
+    width: 150px;
+    height: auto;
+    min-height: 150px;
+    border: 1px solid #ddd;
+}
+</style>
+
+<body>
+    <div class="box" ondragover="javascript:event.preventDefault();" ondrop='drg._end(event)'>
+        <li class="li1" draggable="true" ondragstart='drg._start(event)'>target</li> <!-- 这里ondragstart记录下目标元素的class名或者id -->
+        <li class="li2" draggable="true" ondragstart='drg._start(event)'>target2</li>
+        <li class="li3" draggable="true" ondragstart='drg._start(event)'>target3</li>
+        <li class="li4" draggable="true" ondragstart='drg._start(event)'>target4</li>
+    </div>
+    <div class="box2"  ondragover="javascript:event.preventDefault();" ondrop='drg._end(event)'><!-- 这里阻止掉ondragover事件，采用ondrop事件，ondrop指的是当拖动元素到达目标元素时触发事件，感觉和ondragover类似，但是更稳定。 -->
+    </div>
+</body>
+<script type="text/javascript">
+var drg = {
+    _start: function(e) {
+        var c = e.target.className;
+        e.dataTransfer.setData("fromid", c); /*利用事件的dataTransfer来记录数据*/
+    },
+    _end: function(e) {
+        drg._one(e);
+    },
+    _one:function(e){
+    	var data = e.dataTransfer.getData("fromid"); /*获取dataTransfer记录的数据*/
+        //event.target.appendChild(document.getElementById(data));
+        console.log(e.target);
+        e.target.appendChild(document.querySelector('.' + data));
+    }
+};
+
+</script>
+
+</html>
