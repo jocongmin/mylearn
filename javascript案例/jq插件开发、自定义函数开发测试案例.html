@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+<body>
+	<div class="test" id="test">
+		<li>kdkfjskdf</li>
+	</div>
+</body>
+<script type="text/javascript">
+	$.fn.testfn=function(){
+		$(this).click(function(){
+			alert('sdflksjdkfsjdkf');
+		});
+		$(this)[0].onmouseover=function(){
+			alert('skdfjskjfksd');
+		}
+	};
+	$.fn.demofn=function(){
+		var t=$(this)[0];//这样就可以返回得到调用对象元素dom
+		t.onclick=function(){
+			alert('自己开发的jq方法的调用！');
+		}
+	}
+	$.fn.myfn=function(){
+		var t=this;//这里this也是返回被选择元素的数组形式。
+		this[0].onclick=function(){
+			alert('this 返回值的测试！');
+		}
+	}
+	console.log($);
+	console.dir($);
+	//$('div').myfn(); //这样可以调用到自定义的拓展函数
+	$('div').find('li').myfn(); //这样也可以调用到自定义的拓展函数
+
+</script>
+</html>
