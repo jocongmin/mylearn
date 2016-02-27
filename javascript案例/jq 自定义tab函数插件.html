@@ -97,23 +97,16 @@ function tab_con(a, b) {
 }
 $.fn.tab = function() {
     var box = $(this);
-    a = box.find('.tab');
-    b = box.find('.con');
-    tab_con(a, b);
+    box.hover(function() {  
+        var a = box.find('.tab');
+        var b = box.find('.con');
+        tab_con(a, b);
+    })
 }
 $(function() {
-    //$('.box1').tab();如果这样写程序只会运行一遍，不能及时更新，容易造成混杂错误，就是与box2混掉，最好的办法就是每次
-    //hover的时候自动更新一次，这样就不会混掉了。
-    //$('.box2').tab();如果这样写程序只会运行一遍
-    $('.box1').hover(function() {
-        $(this).tab(); //tab是自定义的一个插件函数，函数程序见上方
-    });
-    $('.box2').hover(function() {
-        $(this).tab();
-    });
-    $('.box3').hover(function() {
-        $(this).tab();
-    });
+    $('.box1').tab();
+    $('.box2').tab();
+    $('.box3').tab();
 })
 </script>
 
