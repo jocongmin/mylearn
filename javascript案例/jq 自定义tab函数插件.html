@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <style type="text/css">
+    .hide {
+        display: none;
+    }
+    
+    div[class^='box'] {
+        border: 1px solid #ddd;
+    }
+    
+    .tab {
+        width: auto;
+        display: inline!important;
+        white-space: nowrap;
+        background: yellow;
+        margin-right: 20px;
+    }
+    
+    .con {
+        background: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="tab-t">
+            <ul>
+                <li class="tab" data-tab='1'>tab1</li>
+                <li class="tab" data-tab='2'>tab2</li>
+                <li class="tab" data-tab='3'>tab3</li>
+            </ul>
+        </div>
+        <div class="con-box">
+            <ul>
+                <li class="con" data-con='1'>con1</li>
+                <li class="hide con" data-con='2'>con2</li>
+                <li class="hide con" data-con='3'>con3</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="tab-t">
+            <ul>
+                <li class="tab" data-tab='1'>tab1</li>
+                <li class="tab" data-tab='2'>tab2</li>
+                <li class="tab" data-tab='3'>tab3</li>
+            </ul>
+        </div>
+        <div class="con-box">
+            <ul>
+                <li class=" con" data-con='1'>con1</li>
+                <li class="hide con" data-con='2'>con2</li>
+                <li class="hide con" data-con='3'>con3</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box3">
+        <div class="tab-t">
+            <ul>
+                <li class="tab" data-tab='1'>tab1</li>
+                <li class="tab" data-tab='2'>tab2</li>
+                <li class="tab" data-tab='3'>tab3</li>
+            </ul>
+        </div>
+        <div class="con-box">
+            <ul>
+                <li class=" con" data-con='1'>con1</li>
+                <li class="hide con" data-con='2'>con2</li>
+                <li class="hide con" data-con='3'>con3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+function tab_con(a, b) {
+    show_con = function(n) {
+        b.each(function(e) {
+            var cn = $(this).data('con');
+            if (cn == n) {
+                b.hide();
+                $(this).show();
+            }
+        })
+    };
+
+    a.hover(function() {
+        var n = $(this).data('tab');
+        show_con(n);
+    });
+}
+$.fn.tab = function() {
+    var box = $(this);
+    a = box.find('.tab');
+    b = box.find('.con');
+    tab_con(a, b);
+}
+$(function() {
+    //$('.box1').tab();如果这样写程序只会运行一遍，不能及时更新，容易造成混杂错误，就是与box2混掉，最好的办法就是每次
+    //hover的时候自动更新一次，这样就不会混掉了。
+    //$('.box2').tab();如果这样写程序只会运行一遍
+    $('.box1').hover(function() {
+        $(this).tab(); //tab是自定义的一个插件函数，函数程序见上方
+    });
+    $('.box2').hover(function() {
+        $(this).tab();
+    });
+    $('.box3').hover(function() {
+        $(this).tab();
+    });
+})
+</script>
+
+</html>
