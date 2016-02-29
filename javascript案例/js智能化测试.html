@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .box {
+        width: 500px;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .ans {
+        background: blue;
+        border: 1px solid #ddd;
+        margin-top: 10px;
+        width: 300px;
+        min-height: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: white;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input id="ask" onblur="ans()"></input>
+        <div class="ans" id="ans"></div>
+    </div>
+</body>
+<script type="text/javascript">
+function ans() {
+    var ipt = document.getElementById('ask');
+    var val = ipt.value;
+    var ans = document.getElementById('ans');
+    //
+    var nihao = /^(你好)/;
+    var state = nihao.test(val);
+    if (state) {
+        ans.innerHTML = 'hello!';
+    }
+
+    //
+    var nihao = /^(你是谁)/;
+    var state = nihao.test(val);
+    if (state) {
+        ans.innerHTML = '我是一个机器人';
+    }
+    //
+    var nihao = /^(你来自哪里)/;
+    var state = nihao.test(val);
+    if (state) {
+        ans.innerHTML = '我是来自火星';
+    }
+    //
+    var nihao = /^(你是中国人)/;
+    var state = nihao.test(val);
+    if (state) {
+        ans.innerHTML = '我不是中国人,我是浏览器君';
+    }
+
+    //
+    var nihao = /^(你会唱歌)/;
+    var state = nihao.test(val);
+    if (state) {
+        var hadAudio = document.getElementById('musicit');
+        if (hadAudio) {
+            return false;
+        } else {
+            ans.innerHTML = '我会唱歌,我唱给你听';
+            var $audio = document.createElement('audio');
+            $audio.setAttribute('id', 'musicit');
+            $audio.setAttribute('src', 'music.mp3');
+            $audio.setAttribute('autoplay', 'autoplay');
+            document.body.appendChild($audio);
+        }
+    }
+    //
+    var nihao = /\w*(停)/;
+    var state = nihao.test(val);
+    if (state) {
+        var m = document.getElementById('musicit');
+        //m.pause();
+        m.parentNode.removeChild(m);//remove元素的的方法
+    }
+    //
+    var nihao = /(\w)*(棒)+/;
+    var state = nihao.test(val);
+    if (state) {
+        ans.innerHTML = '哪里哪里';
+    }
+
+}
+</script>
+
+</html>
