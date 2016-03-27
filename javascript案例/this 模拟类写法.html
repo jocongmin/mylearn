@@ -27,7 +27,28 @@
 		};
 		return this;
 	};
-	var app=app(4654656);
-	app.init();
+	app.prototype={
+		cshu:'fdfdhfjhdjfhjdf',
+		start:function(){
+			console.log(this.cshu);
+			console.log(this.abc);//可以解读到父类的对象，拓展中参数的传递需要在父类中获取，然后通过父类的对象传递过来。
+			this.jone();
+			this.jtwo();
+			this.jthree();
+		},
+		jone:function(){
+			console.log('fskdfkdjf');
+		},
+		jtwo:function(){
+			console.log('sdflkjsdjf');
+		},
+		jthree:function(){
+			console.log('sdkjdsjfjsdkf');
+		}
+	}
+/*	var app=app(4654656);
+	app.init();*/
+	var am=new app(64654565);
+	am.start();
 </script>
 </html>
