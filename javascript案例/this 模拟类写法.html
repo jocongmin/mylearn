@@ -8,10 +8,12 @@
 	
 </body>
 <script type="text/javascript">
-	var app=function(){
+	var app=function(abc){
+		this.abc=abc;
 		this.init=function(){   //this 模拟类写法
 			this.fnone();
 			this.fntwo();
+			console.log(this.abc); //可以输出，说明外部从参数中传递进入的变量可以在内部访问
 		}
 		this.name='slkfjsdkjfksdjf';
 		this.tit='sdkfjsdfkjd手可得积分快速搭建';
@@ -25,7 +27,7 @@
 		};
 		return this;
 	};
-	var app=app();
+	var app=app(4654656);
 	app.init();
 </script>
 </html>
