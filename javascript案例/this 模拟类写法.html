@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var app=function(){
+		this.init=function(){   //this 模拟类写法
+			this.fnone();
+			this.fntwo();
+		}
+		this.name='slkfjsdkjfksdjf';
+		this.tit='sdkfjsdfkjd手可得积分快速搭建';
+		this.fnone=function(){
+			console.log('one');
+		};
+		this.fntwo=function(){
+			var a=this.name;
+			console.log(this.tit);
+			console.log(a);
+		};
+		return this;
+	};
+	var app=app();
+	app.init();
+</script>
+</html>
