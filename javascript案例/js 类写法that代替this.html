@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<style>
+.curser:hover {
+    cursor: pointer;
+}
+
+.set {
+    -webkit-user-select: none;
+    user-select: none;
+}
+</style>
+
+<body>
+    <div class="set">
+        <span class="less curser" onclick="set.less()">-</span>
+        <span><input id="val" onblur="set.watch()" type="text" value="10"></span>
+        <span class="more curser" onclick="set.more()">+</span>
+    </div>
+</body>
+<script>
+var set = (function(interval) {
+    var that = this;//这样无论在函数内部哪里引用that都对应set这个对象的this
+    var base = interval;
+    that.less = function() {
+        var val = that.watch();
+        newval = val - base;
+        if (newval <= 0) {
+            return false;
+        }
+        $('#val').val(newval);
+    };
+    that.more = function() {
+        var val = that.watch();
+        newval = val + base;
+        $('#val').val(newval);
+    };
+    that.watch = function() {
+        var val = that.values();
+        var b = that.inter(val);
+        if (!b) {
+            var ceil = Math.ceil(val / base);
+            val = ceil * base;
+            document.getElementById('val').value = val;
+        };
+        return val;
+    };
+    that.inter = function(a) {
+        var re = /[1-9]*(0)$/;
+        var s = re.test(a);
+        return s;
+    };
+    that.values = function() {
+        var c = jQuery('#val').val();
+        c = c.replace(/[^0-9-]+/, '');//字符串替换内容方法
+        c = parseInt(c);
+        if (isNaN(c)) {
+            c = base;
+            document.getElementById('val').value = c;
+        }
+        return c;
+    }
+    return that;
+})(10);
+</script>
+
+</html>
