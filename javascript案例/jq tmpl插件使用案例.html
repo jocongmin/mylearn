@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../jquery.tmpl.js"></script>
+</head>
+
+<body>
+    <ul id="moiveList">
+    </ul>
+    <div class="box"></div>
+    <script id="moiveTemplate" type="text/x-jquery-templ">
+        <li><b>${Name}</b>(${ReleaseYear})</li>
+    </script>
+    <script type="text/x-jquery-templ" id="boxm">
+        {{if state==1}}
+        	<span>${abc}</span> 
+        	{{else app==1}}
+        	<span>nimade</span>
+        	{{else}}
+        {{/if}}
+    </script>
+    <script>
+    var moives = [{
+        Name: "The Red Violin",
+        ReleaseYear: "1998"
+    }, {
+        Name: "Eyes Wide Shut",
+        ReleaseYear: "1999"
+    }, {
+        Name: "The Inheritance",
+        ReleaseYear: "1976"
+    }];
+    var onec = [{
+        abc: 'sdlfkjsdkljfskdjfsd',
+        state:0,
+        app:1
+    }];
+    $('#boxm').tmpl(onec).appendTo('.box');
+    $("#moiveTemplate").tmpl(moives).appendTo("#moiveList");
+    </script>
+</body>
+
+</html>
