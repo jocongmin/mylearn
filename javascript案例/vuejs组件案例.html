@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>vue.js hello world</title>
+        <script src="vue.min.js"></script>
+        
+    </head>
+<body>
+    <div id="example">
+      <my-component v-on:click="cao"></my-component>
+    </div>
+        <script>
+        // 定义
+        var MyComponent = Vue.extend({
+          template: '<div>A custom component!</div>'
+        });
+        
+        // 注册
+        Vue.component('my-component', MyComponent);
+        
+        // 创建根实例
+        new Vue({
+          el: '#example',
+          methods:{
+              cao:function(event){
+                  alert(event.target.tagName);
+              }
+          }
+        });
+                    
+        </script>
+</body>
+</html>
