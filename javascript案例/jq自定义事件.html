@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">123</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('.box').bind('tap',function(){//jq自定义事件
+			$(this).html('hello world');
+		});
+		$('.box').trigger('tap');
+	})
+</script>
+</html>
