@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="LAB.min.js"></script>
+</head>
+
+<body>
+</body>
+<script>
+$LAB.script("js/jquery-2.js").script("a.js")
+    .wait(function() {
+        $(function() {
+            alert('sdfkjsdkjfsdk');
+        });
+    });
+$LAB.script("js/jquery-2.js").wait(function(){
+    console.log('boxboxoxboxboxoxboxb');
+})
+</script>
+
+</html>
