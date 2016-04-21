@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var index=(function(){
+		var $index=function(){}; //设计模式
+		$index.fn=$index.prototype;
+		$index.fn.init=function(){
+			index.demo();
+			index.who();
+		};
+		$index.fn.demo=function(){
+			console.log('demo');
+		};
+		$index.fn.who=function(){
+			console.log('who');
+		};
+		return new $index;
+	})();
+	index.init();
+</script>
+</html>
