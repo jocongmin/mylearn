@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='angular-1.4.7/angular.min.js'></script>
+</head>
+<body ng-app="app">
+	<div class="one" ng-controller="myCtrl">
+		<span ng-bind="name"></span>
+		<button ng-click="clfn()">点击</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var app=angular.module('app',[]);
+	app.controller('myCtrl', ['$scope', function($scope){
+		$scope.name='sdlkfjsldkfjlskdjf';
+		$scope.clfn=function(){
+			$scope.name='网络科技发达离开世界';
+		}
+	}]);
+</script>
+</html>

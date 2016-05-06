@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src='angular-1.4.7/angular.min.js'></script>
+</head>
+
+<body ng-app="app">
+    <div class="test" ng-controller="temCtrl">
+        <span ng-bind='name'></span>
+        <button ng-click="myTmp='one.html'">1</button>    <!-- 这里变量myTmp写入模板 -->
+        <button ng-click="myTmp='/two.html'">2</button>
+        <button ng-click="myTmp='/three.html'">3</button>
+        <div ng-include="'lovestory.html'">
+        </div>
+        <div ng-include="myTmp" scope="" onload=""></div>  <!-- //这里根据变量myTmp来改变模板 -->
+    </div>
+    <div class="test">
+        <div ng-include="'lovestory.html'" scope="" onload=""></div>  <!-- 这里的ng-include="'lovestory.html'" 格式要这样才行双引号单引号需要注意 -->
+    </div>
+    <div ng-include="'one.html'" scope="" onload=""></div>  <!-- 这里说明模板只要用ng-include引入即可 -->
+</body>
+<script type="text/ng-template" id="one.html">  
+<!--这里的模板寄托方式可以是script标签，id写上模板的名字即可-->
+    <div>one-sdkjfdksfj</div>
+    <div>sdfdsjfk</div>
+    <div ng-controller='oneCtrl'>
+        <span ng-bind='ttc'></span>
+    </div>
+</script>
+<script type="text/ng-template" id="/two.html">
+    <div>two-sdkjfdksfj</div>
+</script>
+<script type="text/ng-template" id="/three.html">
+    <div>three-sdkjfdksfj</div>
+</script>
+<script type="text/javascript">
+var app = angular.module('app', []);
+app.controller('temCtrl', ['$scope', '$templateCache', function($scope, $templateCache) {
+    $scope.name = 'sdlkfjdsljf';
+
+    var tmp = "<div>tmp</div>";
+    $templateCache.put('lovestory.html', tmp);   //这里是第二种模板寄托方式，即引入$templateCache，然后用put方法写入模板。且模板可以在控制器之外的作用域使用。
+}]);
+app.controller('oneCtrl', ['$scope', function($scope) {
+    $scope.ttc = 'ttc-dslfkjdskjfd';
+}])
+</script>
+<!-- 综上所指，ng-include 模板有2种寄托方式，一种是script标签，一种是控制器中的$templateCache方法写入模板。 -->
+</html>

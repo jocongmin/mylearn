@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="angular-1.4.7/angular.min.js"></script>
+	<script type="text/javascript" src="angular-1.4.7/angular-route.js"></script>
+</head>
+<body ng-app="app">
+	<div class="link" ng-controller="linkCtrl">
+		<a href="#/1" target="blank">one</a><br>    <!-- 这里的理解地址#/ 代表跳转相应的页面，直接会在当前连接的后面加入a标签标记的链接 -->
+		<a href="#/2" target="blank">two</a><br>
+		<a href="#/3" target="blank">three</a>
+		<button ng-click="loca()"></button>
+		<button ng-click="winLoca()"></button>
+	</div>
+	<div>benlai</div>
+	<div class="view" ng-view></div>   <!-- ng-view用来指定路由模板显示的地方。 
+	注意这里的路由不是页面的跳转，而是将路由的模板的内容传递到这个页面的某个ng-view元素里面。
+	-->
+</body>
+<script type="text/javascript">
+	var app=angular.module('app', ['ngRoute']);    //['ngRoute']表示引进ngRoute模块（在插件里）。
+	app.config(['$routeProvider',function($routeProvider) {   
+		$routeProvider.when('/1',{     //when用来指定不同路径情况下的路由页面的模板。
+			templateUrl:'one.html'
+		}).when('/2',{
+			templateUrl:'two.html',    //指定路由的模板，如file:///C:/Users/zhoucongmin/Desktop/ng/ng.html#/2 ，注意需要加#号之后在加/才可以路由到相应的页面。否则无效。
+			controller:'twoCtrl'     //controller项目可以用来指定模板对应的控制器名的控制器
+		}).when('/3',{
+			templateUrl:'three.html',
+			controller:'threeCtrl'   //这样模板就绑定了对应的控制器，可以访问控制器里面的作用域。绑定控制器后，模板里的html只能访问对应的控制器的作用域，不能访问到其他控制器的作用域。
+		});
+	}]);
+	app.controller('twoCtrl', ['$scope', function($scope){   
+		$scope.name="22222dskfjlkfdj";   
+	}]);
+	app.controller('threeCtrl', ['$scope', function($scope){
+		$scope.name="33331111dskfjlkfdj";
+	}]);
+	app.controller('linkCtrl', function($scope,$location,$window){
+		$scope.loca=function(){
+			$location.path('/3');   //可以利用$location.path 来改变url末尾的相对地址，效果与a链接相同。当然$location是当前页面的局部刷新，不是重新刷新到一个新页面。
+			console.log($location.absUrl());   //这里输出的是全部的url地址
+			console.log($location.url());    //这里输出的是相对的地址，输出相对根路径的地址。
+			console.log($location.path());  //这里输出的是相对的地址，输出相对根路径的地址，效果与上相同。
+		};
+		$scope.winLoca=function(){
+			$window.location.href="http://www.baidu.com";    //这里$window.location.href可以用来跳转页面，效果是当前页面重新打开一个新的html页面
+			/*$window.location="http://www.baidu.com"; */    //$window.location 效果与上是相同的。
+		}
+	})
+</script>
+</html>

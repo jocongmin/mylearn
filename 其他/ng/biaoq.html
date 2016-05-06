@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="angular-1.4.7/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div class="box" ng-controller="myctrl">
+        <span ng-bind="name"></span>
+        <boxdiv>
+            <boxinner>dlksjkfsjdkf</boxinner>
+            <boxinnertwo>twotowotwotowtowotowtowotowdlksjkfsjdkf</boxinnertwo>
+            <span ng-bind="tit"></span>
+            <boxotc></boxotc>
+        </boxdiv>
+    </div>
+</body>
+<script type="text/javascript">
+var index = (function() {
+    this.init = function() {
+        this._angular();
+    };
+    var app = angular.module('myapp', []);
+    this._angular = function() {
+        app.controller('myctrl', function($scope) {
+            $scope.name = 'skdfjskdjfs';
+        });
+        app.directive('boxotc', function() {
+            return {
+                restrict: 'AE',
+                replace: 'true',
+                template: '<div ng-click="fuck()">fuck you</div>',
+                link: function(scope, elem, attr) {
+                    scope.fuck = function() {
+                        alert('fuck you you');
+                    }
+                }
+            }
+        });
+        app.directive('boxdiv', function() {
+            return {
+                restrict: 'AE',
+                replace: 'true',
+                transclude: 'true',
+                template: '<div><div ng-transclude></div></div>',
+                link: function(scope, elem, attr) {
+                    scope.tit = 'fsdlkfjslkdjfksdf';
+                }
+            }
+        });
+    };
+    return this;
+})();
+index.init();
+</script>
+
+</html>

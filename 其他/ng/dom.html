@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src='angular-1.4.7/angular.min.js'></script>
+</head>
+
+<body ng-app="app">
+    <div class="box" ng-controller="myCtrl">
+        sjdflkjsdfj
+        <br>
+        <span id='span_one'>sdlfkjsdlkfj</span>
+        <br>
+        <span ng-bind="name"></span>
+        <br>
+        <br>
+        <form name='frm' ng-submit="formSubmit()">
+            <input type="email" name='email' required ng-model='user.email'> <!-- 这里每一项属性都是需要填写的。 -->
+            <span ng-show='frm.email.$error.required'>required</span> <!-- 这里是错误未填入数据时候的状态显示 -->
+            <span ng-show='frm.email.$error.email'>not an email</span> <!-- 这里是不符合预订格式时候的状态显示 -->
+            <br>
+            <input type="number" name='number' required ng-model='user.number' ng-minlength='5' ng-maxlength='10'>
+            <span ng-show='frm.number.$error.minlength'>太短</span>
+            <span ng-show='frm.number.$error.maxlength'>太长</span>
+            <br>
+            <input type="text" name='yourName' required ng-model="user.pattern" ng-pattern="/^[0-9]*$/">
+            <span ng-show='frm.yourName.$error.required'>required</span>
+            <span ng-show='frm.yourName.$error.pattern'>错误格式</span>
+            <br>
+            <input type="text" name='myName' required ng-model="user.pattern" ng-pattern="/^[0-9]*$/">
+            <span ng-show='frm.myName.$error.required'>required</span>
+            <span ng-show='frm.myName.$error.pattern'>错误格式</span>
+            <br>
+            <input type="submit">  
+        </form>
+    </div>
+    <div class="box2" ng-controller="switchCtrl">
+    	<input type="text" ng-model='stateVal'>
+    	<div class="which" ng-switch='stateVal'>  <!-- 根据stateVal的值显示模板 -->
+    		<div ng-switch-when="1">one</div>
+    		<div ng-switch-when="2">two</div>
+    		<div ng-switch-when="3">three</div>
+    		<div ng-switch-default>other</div>
+    	</div>
+    </div>
+</body>
+<script type="text/javascript">
+var app = angular.module('app', []);
+app.controller('myCtrl', function($scope, $element) {
+    $scope.name = 'sldkjfsdkjf';
+    console.log($element);
+    var t = $element.find('#span_one').html();
+    console.log(t);
+    $scope.formSubmit=function(isValid){    //表单上传时候触发的事件
+    	if(!isValid){
+    		alert('验证失败');
+    	}
+    }
+});
+app.controller('switchCtrl', function($scope){
+})
+</script>
+
+</html>

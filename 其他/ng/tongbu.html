@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="ipt" onblur="inputStorage()">
+	<div class="box" id="box">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	function inputStorage(){
+		var ipt=document.getElementById('ipt').value;
+		var tmp=ipt;
+		localStorage.setItem("tmp", tmp);
+	}
+	function interGet(){
+		var t=localStorage.getItem('tmp');
+		var el=document.getElementById('box');
+		el.innerHTML=t;
+	}
+	setInterval('interGet()',100);  //这里循环读取可以更新对应的视图内容
+</script>
+</html>
