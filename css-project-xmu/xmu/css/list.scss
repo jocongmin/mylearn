@@ -1,0 +1,199 @@
+@import "reset.scss";
+@import "nav.scss";
+@import "sidbar.scss";
+@import "bg.scss";
+main {
+    background: #e1e1e1;
+}
+
+.banner-pro {
+    background: white;
+    padding-top: 22px;
+    .pic,
+    .info {
+        float: left;
+    }
+    .pic {
+        width: 50%;
+        background: white;
+        text-align: center;
+        position: relative;
+        img {
+            height: 150px;
+        }
+        em {
+            position: absolute;
+            left: 6%;
+            top: -22px;
+            background: black;
+            color: white;
+            font-size: 12px;
+            display: block;
+            width: 33px;
+            height: 33px;
+        }
+    }
+    .info {
+        width: 50%;
+        .mouth {
+            margin-bottom: 16px;
+            color: #999;
+            margin-top: 10px;
+            text-align: left;
+            span {
+                margin: 0 2%;
+            }
+            em {
+                display: inline-block;
+                width: 30%;
+                border: 1px solid #eee;
+                position: relative;
+                top: -4px;
+            }
+        }
+        .tit {
+            font-size: 14px;
+            color: #666;
+            margin-top: 17px;
+            padding-right: 10px;
+        }
+        .pri {
+            font-size: 16px;
+            font-family: arial;
+            color: #f84343;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    }
+}
+
+.nav-on {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.nav {
+    background: white;
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    ul {
+        white-space: nowrap;
+        display: inline-block;
+        text-align: left;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    li {
+        color: #a1a1a1;
+        font-size: 14px;
+        display: inline-block;
+        position: relative;
+        padding: 12px 23px;
+        &:nth-child(1) {
+            padding-left: 0;
+        }
+        ;
+        span {
+            color: #666;
+            font-size: 14px;
+        }
+    }
+    .first {
+        font-size: 14px;
+        white-space: nowrap;
+        margin-right: 44px;
+        padding: 12px 0!important;
+        margin-left: 16px;
+    }
+    .on {
+        color: #f84343;
+        padding: 7px 0;
+        border-bottom: 2px solid #f84343;
+    }
+}
+
+.list {
+    margin-top: 10px;
+    ul {
+        flex-wrap: wrap;
+        ;
+        justify-content: space-between;
+        li {
+            width: 50%;
+            padding: 4%;
+            background: white;
+            padding-bottom: 2%;
+            &:nth-child(odd) {
+                border-right: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+            }
+            ;
+            &:nth-child(even) {
+                border-bottom: 1px solid #ddd;
+            }
+            ;
+            .pic {
+                position: relative;
+                text-align: center;
+                em {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 33px;
+                    height: 33px;
+                    text-align: center;
+                    font-size: 12px;
+                    background: #f84343;
+                    color: white;
+                }
+            }
+            .tit {
+                color: #666;
+                font-size: 12px;
+                margin: 4px 0;
+                margin-bottom: -2px;
+            }
+            .pri-buy {
+                line-height: 27px;
+                position: relative;
+                span {
+                    color: #f84343;
+                    font-family: arial;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                em,
+                i {
+                    display: inline-block;
+                    position: relative;
+                }
+                em {
+                    @extend .bg-like;
+                    position: relative;
+                    top: 13px;
+                    left: -8px;
+                    transform: scale(0.35);
+                }
+                .eon {
+                    @extend .bg-like-on;
+                }
+                i {
+                    @extend .bg-car;
+                    float: right;
+                    position: absolute;
+                    top: 12px;
+                    transform: scale(0.5);
+                    right: -12px;
+                }
+                .ion {
+                    @extend .bg-car-on;
+                    top: 3px;
+                    float: right;
+                    padding-left: 56px;
+                }
+            }
+        }
+    }
+}
