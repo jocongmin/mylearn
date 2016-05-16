@@ -6,7 +6,7 @@ main {
     background: #e1e1e1;
 }
 
-.banner-pro {
+#banner_pro {
     background: white;
     padding-top: 22px;
     .pic,
@@ -30,7 +30,7 @@ main {
             font-size: 12px;
             display: block;
             width: 33px;
-            height: 33px;
+            padding: 2px 0;
         }
     }
     .info {
@@ -74,47 +74,61 @@ main {
     z-index: 999;
 }
 
-.nav {
+.still-top {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width:100%;
+}
+
+#nav_list {
     background: white;
-    height: 40px;
     border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    height: 39px;
+    .first {
+        position: relative;
+        top: -30px;
+        .on {
+            padding: 7px 0!important;
+        }
+    }
     ul {
+        width: 100%;
         white-space: nowrap;
-        display: inline-block;
-        text-align: left;
-        overflow-x: scroll;
-        overflow-y: hidden;
+        position: relative;
+        top: 1px;
+        display: inline;
+        .scroll {
+            display: inline-block;
+            overflow-x: scroll;
+            overflow-y:hidden;
+            width: 85%;
+            .box{
+                display:inline-block;
+            }
+        }
+    }
+    .on {
+        color: #f84343;
+        padding: 6px 0!important;
+        border-bottom: 2px solid #f84343;
     }
     li {
         color: #a1a1a1;
         font-size: 14px;
         display: inline-block;
-        position: relative;
         padding: 12px 23px;
-        &:nth-child(1) {
-            padding-left: 0;
-        }
-        ;
+        position: relative;
+        top: 1px;
         span {
             color: #666;
             font-size: 14px;
         }
     }
-    .first {
-        font-size: 14px;
-        white-space: nowrap;
-        margin-right: 44px;
-        padding: 12px 0!important;
-        margin-left: 16px;
-    }
-    .on {
-        color: #f84343;
-        padding: 7px 0;
-        border-bottom: 2px solid #f84343;
-    }
 }
 
-.list {
+#list {
     margin-top: 10px;
     ul {
         flex-wrap: wrap;
@@ -122,31 +136,34 @@ main {
         justify-content: space-between;
         li {
             width: 50%;
+            float: left;
             padding: 4%;
             background: white;
             padding-bottom: 2%;
+            padding-top: 8%;
+            position: relative;
             &:nth-child(odd) {
                 border-right: 1px solid #ddd;
-                border-bottom: 1px solid #ddd;
             }
-            ;
             &:nth-child(even) {
                 border-bottom: 1px solid #ddd;
+                border-right: 1px solid white;
             }
-            ;
             .pic {
-                position: relative;
                 text-align: center;
                 em {
                     position: absolute;
-                    top: 0;
-                    left: 0;
+                    top: 10px;
+                    left: 15px;
                     width: 33px;
-                    height: 33px;
+                    padding: 2px 0;
                     text-align: center;
                     font-size: 12px;
                     background: #f84343;
                     color: white;
+                }
+                img{
+                    max-width:80%;
                 }
             }
             .tit {

@@ -1,5 +1,5 @@
 @import "bg.scss";
-nav {
+#nav_footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -9,6 +9,7 @@ nav {
     background: white;
     border-top: 1px solid #ddd;
     z-index: 999;
+    padding-top: 6px;
     ul {
         li {
             color: #666;
@@ -18,8 +19,8 @@ nav {
             font-size: 12px;
             em {
                 display: inline-block;
-                transform: scale(0.5);
-                margin: -13px;
+                transform: scale(0.4);
+                margin: -18px;
             }
         }
         .index {

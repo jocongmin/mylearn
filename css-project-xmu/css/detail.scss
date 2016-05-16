@@ -1,0 +1,220 @@
+@import "reset.scss";
+@import "bg.scss";
+@import "detail-tc.scss";
+@import "evaluate-item.scss";
+@import "bar-top.scss";
+@function pxtorem($px) {
+    @return $px / 40 * 1rem;
+}
+
+$margin:10px;
+body {
+    padding-bottom: 45px;
+    background: #f5f5f5;
+}
+
+.still-top-on {
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+#d-still-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    .goback {
+        @extend .bg-gt;
+        float: left;
+        margin-left: 10px;
+        position: relative;
+        top: 5px;
+        transform: scale(0.7) rotate(180deg);
+        opacity: 0.5;
+    }
+    .share {
+        @extend .bg-fenxian;
+        transform: scale(0.5);
+        float: right;
+        margin-right: 0px;
+        position: relative;
+        top: -1px;
+    }
+}
+
+.pri-item {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    .pri {
+        color: #f84343;
+        font-size: 22px;
+        text-align: left;
+    }
+    .had-buy-num {
+        color: #999;
+        text-align: right;
+    }
+}
+
+.detail-header {
+    position: relative;
+    background: white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    .tit {
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 81%;
+        text-overflow: ellipsis;
+    }
+    .info {
+        font-size: 14px;
+        span {
+            background: #f84343;
+            color: white;
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 10px;
+            margin-right: 5px;
+            padding-top: 2px;
+        }
+        color: #999;
+    }
+    .save {
+        position: absolute;
+        right: 10px;
+        bottom: 25px;
+        span {
+            color: #666;
+            font-size: 12px;
+        }
+        .on {
+            @extend .bg-d-xin2;
+        }
+        em {
+            @extend .bg-d-xin;
+            transform: scale(0.5);
+            position: absolute;
+            top: -14px;
+            right: -9px;
+            display: inline-block;
+            filter: 1;
+        }
+        i {
+            display: inline-block;
+            height: 23px;
+            width: 1px;
+            background: #e4e4e4;
+            margin-right: 10px;
+            position: relative;
+            top: -3px;
+        }
+    }
+}
+
+.details {
+    position: relative;
+    padding: 0 10px;
+}
+
+.detail-center {
+    background: white;
+}
+
+.authority {
+    line-height: 26px;
+    li {
+        font-size: 12px;
+        margin-bottom: 5px;
+        color: #666;
+    }
+    em {
+        display: inline-block;
+        transform: scale(0.6);
+        position: relative;
+        top: 8px;
+        left: 4px;
+    }
+    .zp {
+        em {
+            @extend .bg-d-1;
+        }
+    }
+    .th {
+        em {
+            @extend .bg-d-2;
+        }
+    }
+    .gf {
+        em {
+            @extend .bg-d-3;
+        }
+    }
+    .fh {
+        em {
+            @extend .bg-d-4;
+        }
+    }
+}
+
+.evaluate {
+    .tit {
+        font-size: 14px;
+        color: #0e0e0e;
+        border-top: 1px solid #f6f6f6;
+        border-bottom: 1px solid #f6f6f6;
+        line-height: 42px;
+        padding: 0 10px;
+        ;
+        em {
+            text-align: right;
+            color: #999;
+            padding-right: 7px;
+            i {
+                @extend .bg-gt;
+                transform: scale(0.5);
+                display: inline-block;
+                opacity: 0.4;
+                position: relative;
+                top: 7px;
+            }
+        }
+    }
+}
+
+
+
+.up-more {
+    padding: 20px 0;
+    font-size: 14px;
+    margin-bottom: 2px;
+    em {
+        display: inline-block;
+        width: 28%;
+        height: 1px;
+        background: #d2d2d2;
+        position: relative;
+        top: -4px;
+    }
+    span {
+        margin: 0 2%;
+    }
+    color: #999;
+    text-align: center;
+}
+
+.word-tip {
+    background: url(../img/fenxian-mask.png) no-repeat;
+    position: absolute;
+    width: 11rem;
+    height: 11.6rem;
+    top: 5px;
+    right: 23px;
+    background-size: cover;
+}
+
+

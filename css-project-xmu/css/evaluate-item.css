@@ -1,0 +1,32 @@
+#pj_li {
+  padding: 10px 10px;
+  border-bottom: 1px solid #f6f6f6;
+  background: white; }
+  #pj_li .head {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    text-align: center;
+    border-radius: 50px; }
+  #pj_li .pj {
+    position: relative;
+    top: 7px; }
+  #pj_li .box {
+    margin-bottom: 5px; }
+  #pj_li .name-time {
+    margin-bottom: 5px; }
+  #pj_li .name {
+    font-size: 14px; }
+  #pj_li .time {
+    text-align: right;
+    color: #999; }
+  #pj_li .pj-word {
+    font-size: 13px;
+    color: #666; }
+  #pj_li .reply {
+    font-size: 13px;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid #f6f6f6; }
+    #pj_li .reply em {
+      color: #f84343; }

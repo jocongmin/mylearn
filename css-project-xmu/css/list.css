@@ -50,6 +50,9 @@ body {
   overflow-x: hidden;
   color: #333; }
 
+body {
+  font-size: 12px; }
+
 h1,
 h2,
 h3,
@@ -160,28 +163,28 @@ iframe {
   display: box;
   display: flexbox;
   display: flex;
-  width: 100%;
-  height: 100%; }
+  width: 100%; }
 
-.flex_item {
+.flex-item {
   float: none;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1; }
+  flex: 1;
+  width: 100%; }
 
 main {
   background: #e1e1e1;
-  padding-bottom: 66px; }
+  padding-bottom: 50px; }
 
 .more {
   text-align: center;
-  padding: 10px 0;
-  padding-bottom: 12px;
+  padding: 15px 0;
+  padding-bottom: 14px;
   font-size: 14px;
   color: #666; }
 
-.mask {
+#mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -191,16 +194,16 @@ main {
   width: 100%;
   height: 100%; }
 
-.backtop {
+#backtop {
   position: fixed;
   background: url(../img/allbgs.png) no-repeat 0px -261px;
   height: 72px;
   padding-left: 74px;
   bottom: 52px;
-  right: 1px;
-  -webkit-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-          transform: scale(0.5); }
+  right: -10px;
+  -webkit-transform: scale(0.48);
+      -ms-transform: scale(0.48);
+          transform: scale(0.48); }
 
 .bg-white-r {
   background: url(../img/allbgs2.png) no-repeat 0px 0px;
@@ -232,42 +235,42 @@ main {
   height: 42px;
   padding-left: 33px; }
 
-.bg-embuycar, nav ul .buycar em {
+.bg-embuycar, #nav_footer ul .buycar em {
   background: url(../img/allbgs2.png) no-repeat 0px -168px;
   height: 59px;
   padding-left: 62px; }
 
-.bg-type, nav ul .ident em {
+.bg-type, #nav_footer ul .ident em {
   background: url(../img/allbgs2.png) no-repeat 0px -227px;
   height: 60px;
   padding-left: 63px; }
 
-.bg-type-on, nav ul .ident .on {
+.bg-type-on, #nav_footer ul .ident .on {
   background: url(../img/allbgs2.png) no-repeat 0px -287px;
   height: 60px;
   padding-left: 63px; }
 
-.bg-embuycar-on, nav ul .buycar .on {
+.bg-embuycar-on, #nav_footer ul .buycar .on {
   background: url(../img/allbgs2.png) no-repeat 0px -347px;
   height: 60px;
   padding-left: 62px; }
 
-.bg-my-on, nav ul .me .on {
+.bg-my-on, #nav_footer ul .me .on {
   background: url(../img/allbgs2.png) no-repeat 0px -407px;
   height: 60px;
   padding-left: 50px; }
 
-.bg-home, nav ul .index em {
+.bg-home, #nav_footer ul .index em {
   background: url(../img/allbgs2.png) no-repeat 0px -467px;
   height: 60px;
   padding-left: 62px; }
 
-.bg-home-on, nav ul .index .on {
+.bg-home-on, #nav_footer ul .index .on {
   background: url(../img/allbgs2.png) no-repeat 0px -527px;
   height: 60px;
   padding-left: 62px; }
 
-.bg-my, nav ul .me em {
+.bg-my, #nav_footer ul .me em {
   background: url(../img/allbgs2.png) no-repeat 0px -587px;
   height: 60px;
   padding-left: 50px; }
@@ -277,17 +280,17 @@ main {
   height: 72px;
   padding-left: 74px; }
 
-.bg-like, .list ul li .pri-buy em {
+.bg-like, #list ul li .pri-buy em {
   background: url(../img/allbgs.png) no-repeat 0px 0px;
   height: 36px;
   padding-left: 44px; }
 
-.bg-like-on, .list ul li .pri-buy .eon {
+.bg-like-on, #list ul li .pri-buy .eon {
   background: url(../img/allbgs.png) no-repeat 0px -36px;
   height: 36px;
   padding-left: 44px; }
 
-.bg-car, .list ul li .pri-buy i {
+.bg-car, #list ul li .pri-buy i {
   background: url(../img/allbgs.png) no-repeat 0px -72px;
   height: 38px;
   padding-left: 39px; }
@@ -302,12 +305,57 @@ main {
   height: 50px;
   padding-left: 52px; }
 
-.bg-car-on, .list ul li .pri-buy .ion {
+.bg-car-on, #list ul li .pri-buy .ion {
   background: url(../img/allbgs.png) no-repeat 0px -202px;
   height: 55px;
   padding-left: 57px; }
 
-nav {
+.bg-d-close {
+  background: url(../img/detail-icon.png) no-repeat 0px -197px;
+  height: 44px;
+  padding-left: 45px; }
+
+.bg-d-car {
+  background: url(../img/detail-icon.png) no-repeat 0px -160px;
+  height: 30px;
+  padding-left: 32px; }
+
+.bg-d-xin2 {
+  background: url(../img/detail-icon.png) no-repeat 0px -125px;
+  height: 31px;
+  padding-left: 39px; }
+
+.bg-gt {
+  background: url(../img/detail-icon.png) no-repeat 0px 0px;
+  height: 25px;
+  padding-left: 16px; }
+
+.bg-d-xin {
+  background: url(../img/detail-icon.png) no-repeat 0px -55px;
+  height: 31px;
+  padding-left: 39px; }
+
+.bg-d-fenxian {
+  background: url(../img/detail-icon.png) no-repeat 0px -86px;
+  height: 36px;
+  padding-left: 28px; }
+
+.bg-bar-sr {
+  background: url(../img/bar.png) no-repeat 0px 0px;
+  height: 42px;
+  padding-left: 33px; }
+
+.bg-bar-bk {
+  background: url(../img/bar.png) no-repeat 0px -42px;
+  height: 50px;
+  padding-left: 52px; }
+
+.bg-bar-hm {
+  background: url(../img/bar.png) no-repeat 0px -92px;
+  height: 50px;
+  padding-left: 50px; }
+
+#nav_footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -316,23 +364,24 @@ nav {
   padding: 2px 0;
   background: white;
   border-top: 1px solid #ddd;
-  z-index: 999; }
-  nav ul li {
+  z-index: 999;
+  padding-top: 6px; }
+  #nav_footer ul li {
     color: #666;
     float: left;
     width: 25%;
     text-align: center;
     font-size: 12px; }
-    nav ul li em {
+    #nav_footer ul li em {
       display: inline-block;
-      -webkit-transform: scale(0.5);
-          -ms-transform: scale(0.5);
-              transform: scale(0.5);
-      margin: -13px; }
-  nav ul .ident em {
+      -webkit-transform: scale(0.4);
+          -ms-transform: scale(0.4);
+              transform: scale(0.4);
+      margin: -18px; }
+  #nav_footer ul .ident em {
     position: relative;
     left: 5px; }
-  nav ul .buycar i {
+  #nav_footer ul .buycar i {
     position: absolute;
     display: inline-block;
     padding: 2px;
@@ -349,7 +398,7 @@ nav {
         -ms-transform: scale(1.8);
             transform: scale(1.8); }
 
-aside {
+#aside {
   position: fixed;
   font-size: 14px;
   color: white;
@@ -359,17 +408,19 @@ aside {
   height: 100%;
   background: white;
   padding: 10px;
-  border-right: 2px solid #d2d2d2;
+  border-right: 1px solid #d2d2d2;
   padding-top: 55px;
   z-index: 88; }
-  aside h3 {
+  #aside .on {
+    background: #f84343 !important; }
+  #aside h3 {
     font-size: 14px;
     color: #333;
     font-weight: bold;
     margin-bottom: 10px; }
-  aside .btn {
+  #aside .btn {
     margin-top: 40px; }
-    aside .btn span {
+    #aside .btn span {
       display: inline-block;
       padding: 8px;
       text-align: center;
@@ -379,31 +430,28 @@ aside {
       font-size: 14px;
       font-weight: bold;
       color: white; }
-
-.change-brand {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd; }
-  .change-brand ul li {
-    float: left;
+  #aside .change-brand {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd; }
+    #aside .change-brand ul li {
+      float: left;
+      background: #c1c1c1;
+      padding: 5px 0px;
+      border-radius: 5px;
+      width: 25%;
+      text-align: center;
+      margin-right: 7%;
+      margin-bottom: 10px; }
+  #aside .list-way .ls-type {
+    padding: 0 10%; }
+  #aside .list-way h3 {
+    margin-top: 10px; }
+  #aside .list-way ul li {
     background: #c1c1c1;
-    padding: 5px 0px;
-    border-radius: 5px;
-    width: 25%;
+    padding: 5px 10px;
     text-align: center;
-    margin-right: 7%;
-    margin-bottom: 10px; }
-
-.ls-type {
-  padding: 0 10%; }
-
-.list-way h3 {
-  margin-top: 10px; }
-.list-way ul li {
-  background: #c1c1c1;
-  padding: 5px 10px;
-  text-align: center;
-  margin-bottom: 10px;
-  border-radius: 4px; }
+    margin-bottom: 10px;
+    border-radius: 4px; }
 
 .bg-white-r {
   background: url(../img/allbgs2.png) no-repeat 0px 0px;
@@ -435,42 +483,42 @@ aside {
   height: 42px;
   padding-left: 33px; }
 
-.bg-embuycar, nav ul .buycar em {
+.bg-embuycar, #nav_footer ul .buycar em {
   background: url(../img/allbgs2.png) no-repeat 0px -168px;
   height: 59px;
   padding-left: 62px; }
 
-.bg-type, nav ul .ident em {
+.bg-type, #nav_footer ul .ident em {
   background: url(../img/allbgs2.png) no-repeat 0px -227px;
   height: 60px;
   padding-left: 63px; }
 
-.bg-type-on, nav ul .ident .on {
+.bg-type-on, #nav_footer ul .ident .on {
   background: url(../img/allbgs2.png) no-repeat 0px -287px;
   height: 60px;
   padding-left: 63px; }
 
-.bg-embuycar-on, nav ul .buycar .on {
+.bg-embuycar-on, #nav_footer ul .buycar .on {
   background: url(../img/allbgs2.png) no-repeat 0px -347px;
   height: 60px;
   padding-left: 62px; }
 
-.bg-my-on, nav ul .me .on {
+.bg-my-on, #nav_footer ul .me .on {
   background: url(../img/allbgs2.png) no-repeat 0px -407px;
   height: 60px;
   padding-left: 50px; }
 
-.bg-home, nav ul .index em {
+.bg-home, #nav_footer ul .index em {
   background: url(../img/allbgs2.png) no-repeat 0px -467px;
   height: 60px;
   padding-left: 62px; }
 
-.bg-home-on, nav ul .index .on {
+.bg-home-on, #nav_footer ul .index .on {
   background: url(../img/allbgs2.png) no-repeat 0px -527px;
   height: 60px;
   padding-left: 62px; }
 
-.bg-my, nav ul .me em {
+.bg-my, #nav_footer ul .me em {
   background: url(../img/allbgs2.png) no-repeat 0px -587px;
   height: 60px;
   padding-left: 50px; }
@@ -480,17 +528,17 @@ aside {
   height: 72px;
   padding-left: 74px; }
 
-.bg-like, .list ul li .pri-buy em {
+.bg-like, #list ul li .pri-buy em {
   background: url(../img/allbgs.png) no-repeat 0px 0px;
   height: 36px;
   padding-left: 44px; }
 
-.bg-like-on, .list ul li .pri-buy .eon {
+.bg-like-on, #list ul li .pri-buy .eon {
   background: url(../img/allbgs.png) no-repeat 0px -36px;
   height: 36px;
   padding-left: 44px; }
 
-.bg-car, .list ul li .pri-buy i {
+.bg-car, #list ul li .pri-buy i {
   background: url(../img/allbgs.png) no-repeat 0px -72px;
   height: 38px;
   padding-left: 39px; }
@@ -505,28 +553,73 @@ aside {
   height: 50px;
   padding-left: 52px; }
 
-.bg-car-on, .list ul li .pri-buy .ion {
+.bg-car-on, #list ul li .pri-buy .ion {
   background: url(../img/allbgs.png) no-repeat 0px -202px;
   height: 55px;
   padding-left: 57px; }
 
+.bg-d-close {
+  background: url(../img/detail-icon.png) no-repeat 0px -197px;
+  height: 44px;
+  padding-left: 45px; }
+
+.bg-d-car {
+  background: url(../img/detail-icon.png) no-repeat 0px -160px;
+  height: 30px;
+  padding-left: 32px; }
+
+.bg-d-xin2 {
+  background: url(../img/detail-icon.png) no-repeat 0px -125px;
+  height: 31px;
+  padding-left: 39px; }
+
+.bg-gt {
+  background: url(../img/detail-icon.png) no-repeat 0px 0px;
+  height: 25px;
+  padding-left: 16px; }
+
+.bg-d-xin {
+  background: url(../img/detail-icon.png) no-repeat 0px -55px;
+  height: 31px;
+  padding-left: 39px; }
+
+.bg-d-fenxian {
+  background: url(../img/detail-icon.png) no-repeat 0px -86px;
+  height: 36px;
+  padding-left: 28px; }
+
+.bg-bar-sr {
+  background: url(../img/bar.png) no-repeat 0px 0px;
+  height: 42px;
+  padding-left: 33px; }
+
+.bg-bar-bk {
+  background: url(../img/bar.png) no-repeat 0px -42px;
+  height: 50px;
+  padding-left: 52px; }
+
+.bg-bar-hm {
+  background: url(../img/bar.png) no-repeat 0px -92px;
+  height: 50px;
+  padding-left: 50px; }
+
 main {
   background: #e1e1e1; }
 
-.banner-pro {
+#banner_pro {
   background: white;
   padding-top: 22px; }
-  .banner-pro .pic,
-  .banner-pro .info {
+  #banner_pro .pic,
+  #banner_pro .info {
     float: left; }
-  .banner-pro .pic {
+  #banner_pro .pic {
     width: 50%;
     background: white;
     text-align: center;
     position: relative; }
-    .banner-pro .pic img {
+    #banner_pro .pic img {
       height: 150px; }
-    .banner-pro .pic em {
+    #banner_pro .pic em {
       position: absolute;
       left: 6%;
       top: -22px;
@@ -535,28 +628,28 @@ main {
       font-size: 12px;
       display: block;
       width: 33px;
-      height: 33px; }
-  .banner-pro .info {
+      padding: 2px 0; }
+  #banner_pro .info {
     width: 50%; }
-    .banner-pro .info .mouth {
+    #banner_pro .info .mouth {
       margin-bottom: 16px;
       color: #999;
       margin-top: 10px;
       text-align: left; }
-      .banner-pro .info .mouth span {
+      #banner_pro .info .mouth span {
         margin: 0 2%; }
-      .banner-pro .info .mouth em {
+      #banner_pro .info .mouth em {
         display: inline-block;
         width: 30%;
         border: 1px solid #eee;
         position: relative;
         top: -4px; }
-    .banner-pro .info .tit {
+    #banner_pro .info .tit {
       font-size: 14px;
       color: #666;
       margin-top: 17px;
       padding-right: 10px; }
-    .banner-pro .info .pri {
+    #banner_pro .info .pri {
       font-size: 16px;
       font-family: arial;
       color: #f84343;
@@ -569,41 +662,53 @@ main {
   left: 0;
   z-index: 999; }
 
-.nav {
+.still-top {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%; }
+
+#nav_list {
   background: white;
-  height: 40px;
-  border-bottom: 1px solid #ddd; }
-  .nav ul {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  height: 39px; }
+  #nav_list .first {
+    position: relative;
+    top: -30px; }
+    #nav_list .first .on {
+      padding: 7px 0 !important; }
+  #nav_list ul {
+    width: 100%;
     white-space: nowrap;
-    display: inline-block;
-    text-align: left;
-    overflow-x: scroll;
-    overflow-y: hidden; }
-  .nav li {
+    position: relative;
+    top: 1px;
+    display: inline; }
+    #nav_list ul .scroll {
+      display: inline-block;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: 85%; }
+      #nav_list ul .scroll .box {
+        display: inline-block; }
+  #nav_list .on {
+    color: #f84343;
+    padding: 6px 0 !important;
+    border-bottom: 2px solid #f84343; }
+  #nav_list li {
     color: #a1a1a1;
     font-size: 14px;
     display: inline-block;
+    padding: 12px 23px;
     position: relative;
-    padding: 12px 23px; }
-    .nav li:nth-child(1) {
-      padding-left: 0; }
-    .nav li span {
+    top: 1px; }
+    #nav_list li span {
       color: #666;
       font-size: 14px; }
-  .nav .first {
-    font-size: 14px;
-    white-space: nowrap;
-    margin-right: 44px;
-    padding: 12px 0 !important;
-    margin-left: 16px; }
-  .nav .on {
-    color: #f84343;
-    padding: 7px 0;
-    border-bottom: 2px solid #f84343; }
 
-.list {
+#list {
   margin-top: 10px; }
-  .list ul {
+  #list ul {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -611,54 +716,58 @@ main {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-    .list ul li {
+    #list ul li {
       width: 50%;
+      float: left;
       padding: 4%;
       background: white;
-      padding-bottom: 2%; }
-      .list ul li:nth-child(odd) {
-        border-right: 1px solid #ddd;
-        border-bottom: 1px solid #ddd; }
-      .list ul li:nth-child(even) {
-        border-bottom: 1px solid #ddd; }
-      .list ul li .pic {
-        position: relative;
+      padding-bottom: 2%;
+      padding-top: 8%;
+      position: relative; }
+      #list ul li:nth-child(odd) {
+        border-right: 1px solid #ddd; }
+      #list ul li:nth-child(even) {
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid white; }
+      #list ul li .pic {
         text-align: center; }
-        .list ul li .pic em {
+        #list ul li .pic em {
           position: absolute;
-          top: 0;
-          left: 0;
+          top: 10px;
+          left: 15px;
           width: 33px;
-          height: 33px;
+          padding: 2px 0;
           text-align: center;
           font-size: 12px;
           background: #f84343;
           color: white; }
-      .list ul li .tit {
+        #list ul li .pic img {
+          max-width: 80%; }
+      #list ul li .tit {
         color: #666;
         font-size: 12px;
         margin: 4px 0;
         margin-bottom: -2px; }
-      .list ul li .pri-buy {
+      #list ul li .pri-buy {
         line-height: 27px;
         position: relative; }
-        .list ul li .pri-buy span {
+        #list ul li .pri-buy span {
           color: #f84343;
           font-family: arial;
           font-size: 16px;
           font-weight: bold; }
-        .list ul li .pri-buy em,
-        .list ul li .pri-buy i {
+        #list ul li .pri-buy em,
+        #list ul li .pri-buy i {
           display: inline-block;
           position: relative; }
-        .list ul li .pri-buy em {
+        #list ul li .pri-buy em {
           position: relative;
           top: 13px;
           left: -8px;
           -webkit-transform: scale(0.35);
               -ms-transform: scale(0.35);
                   transform: scale(0.35); }
-        .list ul li .pri-buy i {
+        #list ul li .pri-buy i {
           float: right;
           position: absolute;
           top: 12px;
@@ -666,7 +775,7 @@ main {
               -ms-transform: scale(0.5);
                   transform: scale(0.5);
           right: -12px; }
-        .list ul li .pri-buy .ion {
+        #list ul li .pri-buy .ion {
           top: 3px;
           float: right;
           padding-left: 56px; }

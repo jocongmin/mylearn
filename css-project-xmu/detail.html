@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0, minimun-scale=1.0,user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="js/auto_rem.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/detail.css">
+</head>
+
+<body>
+    <div class="detail-header">
+        <div class="top-bar" id="top_bar">
+            <em class="bk"></em>
+            <span class="tit">商品评价</span>
+            <em class="hm"></em>
+            <em class="sr" id="share-wx"></em>
+        </div>
+        <section id="d-banner" class="banner">
+            <div class="box">
+                <img src="img/d-banner.png">
+            </div>
+        </section>
+        <div class="details">
+            <section class="pri-item flex">
+                <div class="pri flex-item">￥128</div>
+                <div class="had-buy-num flex-item">
+                    1359人购买过
+                </div>
+            </section>
+            <section class="tit">
+                美肌系列
+            </section>
+            <section class="info">
+                <span>包邮</span>全场满100元享包邮
+            </section>
+            <section class="save">
+                <i></i>
+                <em></em>
+                <span>收藏</span>
+            </section>
+        </div>
+    </div>
+    <div class="detail-center">
+        <section class="authority">
+            <ul class="flex">
+                <li class="zp flex-item"><em></em>正品保证</li>
+                <li class="th flex-item"><em></em>60天退货</li>
+                <li class="gf flex-item"><em></em>官方授权</li>
+                <li class="fh flex-item"><em></em>闪电发货</li>
+            </ul>
+        </section>
+        <section class="evaluate">
+            <a href="evaluate.html">
+                <div class="tit flex">
+                    <span class="flex-item">全部评价(38)</span>
+                    <em class="flex-item"><i></i></em>
+                </div>
+            </a>
+            <div class="pj-li" id="pj_li">
+                <div class="box flex">
+                    <div class="head">
+                        <img src="img/d-head.png">
+                    </div>
+                    <div class="pj flex-item">
+                        <div class="name-time flex">
+                            <span class="name flex-item">
+                                摩尔
+                            </span>
+                            <span class="time flex-item">
+                                2016-05-09 20:19
+                            </span>
+                        </div>
+                        <div class="pj-word">
+                            应该是正品，质量非常好，不像是肯德基反馈数据大幅亏损的。好评～
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="up-more">
+        <em></em>
+        <span>上拉查看图文详情</span>
+        <em></em>
+    </div>
+    <section id="buy_btn" class="buy-btn flex">
+        <div class="add flex-item">
+            加入购物车
+        </div>
+        <div class="fast-buy flex-item">
+            立即购买
+        </div>
+        <div class="car-num">
+            <em></em>
+            <i>1</i>
+        </div>
+    </section>
+    <div class="backtop" id="backtop">
+    </div>
+    <section class="tc-choice" style="display: none">
+        <div class="pro flex">
+            <div class="pic">
+                <img src="img/d-tc-pro.png">
+            </div>
+            <div class="info flex-item">
+                <h3>美肌系列</h3>
+                <span>￥128</span>
+            </div>
+        </div>
+        <div class="special">
+            <div class="tit">规格</div>
+            <div class="spe">
+                <span class="on">200ml</span>
+                <span>200ml</span>
+                <span>200ml</span>
+            </div>
+        </div>
+        <div class="b-num flex">
+            <div class="tit flex-item">
+                购买数量
+            </div>
+            <div class="numc flex-item">
+                <em class="emless">-</em>
+                <input value="2" type="text">
+                <em class="emmore on">+</em>
+            </div>
+        </div>
+        <div class="sure">
+            确定
+        </div>
+        <div class="close"></div>
+    </section>
+    <div id="mask" class="mask" style="display: none;">
+        <div class="word-tip" style="display: none"></div>
+    </div>
+</body>
+<script type="text/javascript">
+(function() {
+    var tc = document.querySelector('.tc-choice');
+    var mask = document.querySelector('.mask');
+    var addbtn = document.querySelector('.add');
+    addbtn.onclick = function() {
+        tc.style.display = "block";
+        mask.style.display = 'block';
+    }
+    var close = document.querySelector('.close');
+    close.onclick = function() {
+        tc.style.display = "none";
+        mask.style.display = "none";
+    }
+
+    var share = document.querySelector('#share-wx');
+    var tip = document.querySelector('.word-tip');
+    share.onclick = function() {
+        mask.style.display = 'block';
+        tip.style.display = 'block';
+    }
+    tip.onclick = function() {
+        tc.style.display = "none";
+        mask.style.display = "none";
+        tip.style.display = 'none';
+    }
+})()
+</script>
+
+</html>

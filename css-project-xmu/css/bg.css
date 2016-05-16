@@ -102,3 +102,48 @@
   background: url(../img/allbgs.png) no-repeat 0px -202px;
   height: 55px;
   padding-left: 57px; }
+
+.bg-d-close {
+  background: url(../img/detail-icon.png) no-repeat 0px -197px;
+  height: 44px;
+  padding-left: 45px; }
+
+.bg-d-car {
+  background: url(../img/detail-icon.png) no-repeat 0px -160px;
+  height: 30px;
+  padding-left: 32px; }
+
+.bg-d-xin2 {
+  background: url(../img/detail-icon.png) no-repeat 0px -125px;
+  height: 31px;
+  padding-left: 39px; }
+
+.bg-gt {
+  background: url(../img/detail-icon.png) no-repeat 0px 0px;
+  height: 25px;
+  padding-left: 16px; }
+
+.bg-d-xin {
+  background: url(../img/detail-icon.png) no-repeat 0px -55px;
+  height: 31px;
+  padding-left: 39px; }
+
+.bg-d-fenxian {
+  background: url(../img/detail-icon.png) no-repeat 0px -86px;
+  height: 36px;
+  padding-left: 28px; }
+
+.bg-bar-sr {
+  background: url(../img/bar.png) no-repeat 0px 0px;
+  height: 42px;
+  padding-left: 33px; }
+
+.bg-bar-bk {
+  background: url(../img/bar.png) no-repeat 0px -42px;
+  height: 50px;
+  padding-left: 52px; }
+
+.bg-bar-hm {
+  background: url(../img/bar.png) no-repeat 0px -92px;
+  height: 50px;
+  padding-left: 50px; }

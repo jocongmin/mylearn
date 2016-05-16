@@ -1,0 +1,24 @@
+@import "reset.scss";
+@import "bg.scss";
+@import "detail-tc.scss";
+@import "evaluate-item.scss";
+@import "bar-top.scss";
+
+.eva-header{
+	background:white;
+	border-bottom: 1px solid #f6f6f6;
+	ul{
+		li{
+			padding:10px 0;
+			text-align: center;
+			color:#000;
+			font-size: 16px;
+			float: left;
+			width: 33.3333%;
+		}
+	}
+	.on{
+		border-bottom: 1px solid #f84a4a;
+		color: #f84a4a;
+	}
+}
