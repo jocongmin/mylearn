@@ -1,0 +1,23 @@
+$fontc:#989898;
+$bor:1px solid #dcdcdc;
+#submit-pay{
+	background: white;
+	border-top:$bor;
+	font-size: 14px;
+	.tit{
+		color:$fontc;
+		font-size: 14px;
+		border-bottom: $bor;
+		padding:5px 10px;
+	}
+	.payway{
+		color: #000;
+		.balan{
+			padding:10px 10px;
+			border-bottom: $bor;
+		}
+		em{
+			float: right;
+		}
+	}
+}

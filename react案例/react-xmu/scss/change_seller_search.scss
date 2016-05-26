@@ -1,0 +1,31 @@
+#change-seller-search {
+    padding: 10px;
+    color: #797979;
+    .serbox {
+        padding: 10px;
+        background: #f0f0f0;
+        border-radius: 21px;
+        width: 98%;
+        margin: 0 auto;
+        i {
+            zoom: 0.5;
+            float: left;
+            display: inline-block;
+            @extend .bg-gwc-ser;
+        }
+        input {
+            background: transparent;
+            width: 85%;
+            color: #797979;
+            font-size: 16px;
+            border: none;
+            text-align: left;
+            display: inline-block;
+            box-sizing: border-box;
+            padding-left: 20px;
+        }
+    }
+    input::-webkit-input-placeholder{
+        text-align: center;
+    }
+}

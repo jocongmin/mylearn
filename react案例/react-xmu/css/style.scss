@@ -1,0 +1,51 @@
+@import "../scss/_reset.scss";
+@import "../scss/_bg.scss";
+@import "../scss/_bar_top.scss";
+@import "../scss/_nav.scss";
+@import "../scss/_base.scss";
+@import "../scss/index.scss";
+@import "../scss/index_banner.scss";
+@import "../scss/index_brand.scss";
+@import "../scss/index_pro_list.scss";
+@import "../scss/list.scss";
+@import "../scss/list_aside.scss";
+@import "../scss/list_banner_pro.scss";
+@import "../scss/list_nav_list.scss";
+@import "../scss/list_prolist.scss";
+
+@import "../scss/detail.scss";
+@import "../scss/detail_tc.scss";
+@import "../scss/detail_center.scss";
+@import "../scss/detail_header.scss";
+@import "../scss/evaluate.scss";
+@import "../scss/evaluate_item.scss";
+
+/* submit-order page */
+@import "../scss/submit-address.scss";
+@import "../scss/submit-buypro-list.scss";
+@import "../scss/_order-btn.scss";
+
+/* my_order页面，另外共用到 list_nav_list.scss pay_money_bianhao.scss pay_money_bianhao.scss ../scss/submit-buypro-list.scss */
+@import "../scss/my_order.scss";
+
+@import "../scss/adress_list.scss";
+
+@import "../scss/pay_money_sendseller.scss";
+@import "../scss/pay_money_bianhao.scss";
+@import "../scss/pay-money-tc.scss";
+
+@import "../scss/change_seller_cggood.scss";
+@import "../scss/change_seller_list.scss";
+@import "../scss/change_seller_search.scss";
+
+@import "../scss/pay_success_style.scss";
+@import "../scss/pay_fail_style.scss";
+@import "../scss/buyCar_comm.scss";
+@import "../scss/buyCar_header.scss";
+@import "../scss/buyCar_panel.scss";
+@import "../scss/buyCar_settle.scss";
+@import "../scss/empty_car.scss";
+
+@import "../scss/add_address.scss";
+
+

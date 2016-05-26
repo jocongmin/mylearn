@@ -1,0 +1,81 @@
+#buyCar-panel{
+  background:white;
+  &:last-child{
+    margin-bottom:48px;
+  }
+  .p-panel{
+    padding:10px 15px;
+    border-bottom:1px solid #e5e5e5;
+    .p-left{
+      width:22%;
+      height:79px;
+      @extend .fl;
+      position: relative;
+      padding-left:21px;
+      i{
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        margin:auto;
+        width:16px;
+        @extend .bg-uncheck;
+        zoom:0.5;
+
+      }
+      img{
+        max-width:100%;
+        max-height:79px;
+        vertical-align:middle;
+      }
+    }
+    .p-right{
+      width:78%;
+      @extend  .fr;
+      .p-name{
+        @extend .clearfix;
+        @extend .fontStyle15;
+        .p-price{
+          @extend .fr;
+          @extend .fontStyle15-2;
+        }
+      }
+      .p-select{
+        padding:8px 0;
+        @extend .clearfix;
+        .p-size{
+          @extend .fl;
+          font-size:12px;
+          color:#989898 ;
+        }
+      }
+      .p-count{
+        .p-num{
+          font-size:12px;
+          color:#a1a1a1;
+
+        }
+        .reduce{
+          @extend .bg-gwc-less;
+          zoom:0.5;
+        }
+        .add{
+          position: relative;
+          right:-10px;
+          @extend .bg-gwc-more;
+          zoom:0.5;
+
+        }
+        input{
+          flex:62;
+          height:17px;
+          line-height:17px;
+          border:none;
+          text-align: center;
+          font-size:15px;
+          color:#262626;
+        }
+      }
+    }
+  }
+}

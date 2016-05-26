@@ -1,0 +1,47 @@
+@import "_bg.scss";
+#list-nav-list {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    height: 39px;
+    .first {
+        position: relative;
+        top: -30px;
+        .on {
+            padding: 7px 0!important;
+        }
+    }
+    ul {
+        width: 100%;
+        white-space: nowrap;
+        position: relative;
+        top: 1px;
+        display: inline;
+        .scroll {
+            display: inline-block;
+            overflow-x: scroll;
+            overflow-y:hidden;
+            width: 85%;
+            .box{
+                display:inline-block;
+            }
+        }
+    }
+    .on {
+        color: #f84343;
+        padding: 6px 0!important;
+        border-bottom: 2px solid #f84343;
+    }
+    li {
+        color: #a1a1a1;
+        font-size: 14px;
+        display: inline-block;
+        padding: 12px 23px;
+        position: relative;
+        top: 1px;
+        span {
+            color: #666;
+            font-size: 14px;
+        }
+    }
+}

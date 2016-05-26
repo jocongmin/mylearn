@@ -1,0 +1,26 @@
+#adress-list {
+    font-size: 15px;
+    background: white;
+    color: #000;
+    .item {
+        padding: 10px;
+        border-bottom: $bor;
+    }
+    .tit {
+        margin-bottom: 20px;
+    }
+    .item-left {
+        flex: 10;
+    }
+    .phone {
+        text-align: right;
+    }
+    .item-right {
+        position: relative;
+        em {
+            position: absolute;
+            top: 51px;
+            right: 5px;
+        }
+    }
+}

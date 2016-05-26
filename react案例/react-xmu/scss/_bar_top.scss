@@ -1,0 +1,52 @@
+/* @import "bg.scss"; */
+
+#top-bar {
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 42px;
+    box-sizing: border-box;
+    em {
+        position: relative;
+        top: -8px;
+        right: -6px;
+        display: inline-block;
+        zoom: 0.5;
+    }
+    .bk {
+        float: left;
+        position: relative;
+        top: -4px;
+        left: 0px;
+        @extend .bg-bar-bk;
+    }
+    .sr {
+        float: right;
+        position: absolute;
+        top: 17px;
+        right: 86px;
+        @extend .bg-bar-sr;
+    }
+    .hm {
+        float: right;
+        position: relative;
+        top: -4px;
+        @extend .bg-bar-home;
+    }
+    span {
+        font-size: 16px;
+        visibility: hidden;
+    }
+}
+
+.top-bar-on {
+    background: white;
+    border-bottom: 1px solid #dedede;
+    span {
+        visibility: visible!important;
+    }
+}

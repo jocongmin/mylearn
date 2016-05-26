@@ -1,0 +1,58 @@
+#my-order {
+    #list-nav-list {
+        margin-bottom: 10px;
+        position: relative;
+        .scroll {
+            height: 38px;
+        }
+        .first {
+            position: relative;
+            top: -14px;
+        }
+        .box {
+            position: relative;
+            top: 0px;
+            width: 83%;
+            margin: 0;
+            padding: 0;
+            overflow-y: hidden;
+            height: 39px;
+        }
+        .right {
+            width: 10%;
+            float: right;
+            height: 39px;
+            line-height: 45px;
+            text-align: center;
+            border-left: 1px solid #dcdcdc;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: white;
+            em {
+                position: relative;
+                left: 4px;
+                zoom: 0.5;
+                display: inline-block;
+                @extend .bg-goright;
+            }
+        }
+    }
+    .time {
+        color: $red;
+    }
+    #pay-money-bianhao {
+        margin-bottom: 0;
+    }
+    .alink {
+        @extend .bg-goright;
+        position: absolute;
+        right: 0;
+        font-size: 21px;
+        zoom: 0.5;
+        opacity: 0.6;
+    }
+    #pay-money-sendseller {
+        margin-bottom: 10px;
+    }
+}

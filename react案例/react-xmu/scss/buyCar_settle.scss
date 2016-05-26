@@ -1,0 +1,27 @@
+#buyCar-settle{
+  width:100%;
+  border-top:1px solid #d6d6d6;
+  box-sizing: border-box;
+  @extend .bg-white;
+  @extend .position_fix_b;
+  bottom:50px;
+  div{
+    width:50%;
+    height:49px;
+    line-height:49px;
+    &:first-child{
+      padding:0 0 0 8px;
+      font-size:16px;
+      color:#f84a4a;
+    }
+  }
+  a{
+    width:50%;
+    height:49px;
+    line-height:49px;
+    display:inline-block;
+    text-align: center;
+    @extend .fontStyle16;
+    background:#f84a4a;
+  }
+}

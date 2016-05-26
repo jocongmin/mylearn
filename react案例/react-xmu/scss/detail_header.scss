@@ -1,0 +1,75 @@
+#detail-header {
+    position: relative;
+    background: white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    .tit {
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 81%;
+        text-overflow: ellipsis;
+    }
+    .info {
+        font-size: 14px;
+        span {
+            background: #f84343;
+            color: white;
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 10px;
+            margin-right: 5px;
+            padding-top: 2px;
+        }
+        color: #999;
+    }
+    .save {
+        position: absolute;
+        right: 10px;
+        bottom: 25px;
+        span {
+            color: #666;
+            font-size: 12px;
+        }
+        .on {
+            @extend .bg-d-xin2;
+        }
+        em {
+            @extend .bg-d-xin;
+            transform: scale(0.5);
+            position: absolute;
+            top: -14px;
+            right: -9px;
+            display: inline-block;
+            filter: 1;
+        }
+        i {
+            display: inline-block;
+            height: 23px;
+            width: 1px;
+            background: #e4e4e4;
+            margin-right: 10px;
+            position: relative;
+            top: -3px;
+        }
+    }
+    .pri-item {
+        margin-bottom: 25px;
+        margin-top: 20px;
+        .pri {
+            color: #f84343;
+            font-size: 22px;
+            text-align: left;
+        }
+        .had-buy-num {
+            color: #999;
+            text-align: right;
+        }
+    }
+    .details {
+        position: relative;
+        padding: 0 10px;
+    }
+}

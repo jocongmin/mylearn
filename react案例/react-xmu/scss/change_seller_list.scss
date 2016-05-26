@@ -1,0 +1,47 @@
+#change-seller-list {
+    border-top: $bor;
+    .right {
+        line-height: 3.2rem;
+        margin-right: 5px;
+    }
+    li {
+        border-bottom: $bor;
+        padding: 10px;
+    }
+    .pic {
+        text-align: center;
+        flex: 2;
+        img{
+        	width: 100%;
+        	height: 100%;
+        }
+    }
+    .info {
+        margin-left: 3%;
+        flex: 7;
+        color: $aaa;
+        position: relative;
+        .name {
+            font-size: 17px;
+            color: #000;
+        }
+        i {
+            display: inline-block;
+            padding: 2px 8px;
+            border: 1px solid #ececec;
+            border-radius: 10px;
+        }
+        .pj {
+            margin-top: 12px;
+        }
+        .loca {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            em {
+                float: right;
+            }
+        }
+    }
+}

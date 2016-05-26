@@ -1,0 +1,43 @@
+/* @import "reset";
+@import "base";
+@import "nav";
+@import "bar-top";
+@import "success_fail";
+@import "add-address"; */
+
+#in-p {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #ffffff;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    animation: pop 2s ease-in-out;
+    z-index: 100;
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -40px, 0);
+        transform: translate3d(0, -40px, 0);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 210px, 0);
+        transform: translate3d(0, 210px, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -40px, 0);
+        transform: translate3d(0, -40px, 0);
+    }
+}

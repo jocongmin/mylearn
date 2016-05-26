@@ -1,0 +1,45 @@
+/* @import "reset.scss";
+@import "bg.scss";
+@import "detail-tc.scss";
+@import "evaluate-item.scss";
+@import "bar-top.scss";
+@import "detail_header.scss";
+@import "detail_center.scss"; */
+@function pxtorem($px) {
+    @return $px / 40 * 1rem;
+}
+
+$margin:10px;
+body {
+    padding-bottom: 45px;
+    background: #f5f5f5;
+}
+
+.up-more {
+    padding: 20px 0;
+    font-size: 14px;
+    margin-bottom: 2px;
+    em {
+        display: inline-block;
+        width: 28%;
+        height: 1px;
+        background: #d2d2d2;
+        position: relative;
+        top: -4px;
+    }
+    span {
+        margin: 0 2%;
+    }
+    color: #999;
+    text-align: center;
+}
+
+.word-tip {
+    background: url(../img/fenxian-mask.png) no-repeat;
+    position: absolute;
+    width: 11rem;
+    height: 11.6rem;
+    top: 5px;
+    right: 23px;
+    background-size: cover;
+}

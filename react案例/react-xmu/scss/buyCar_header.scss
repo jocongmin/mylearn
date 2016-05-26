@@ -1,0 +1,23 @@
+#buyCar-header {
+    @extend .bg-white;
+    @extend .position_fix_t;
+    @extend .wh37;
+    @extend .fontStyle14;
+    margin-top: 0;
+    border-bottom: 1px solid #e5e5e5;
+    height: 42px;
+    line-height: 42px;
+    .selectAll {
+        @extend .ml15;
+        .radioStyle {
+            width: 16px;
+            height: 16px;
+            @extend .bg-uncheck;
+            margin-right: 5px;
+            zoom: 0.5;
+        }
+    }
+    .update {
+        @extend .mr15;
+    }
+}

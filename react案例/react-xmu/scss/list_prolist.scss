@@ -1,0 +1,87 @@
+@import "_bg.scss";
+#list-prolist {
+    margin-top: 10px;
+    ul {
+        flex-wrap: wrap;
+        ;
+        justify-content: space-between;
+        li {
+            width: 50%;
+            float: left;
+            padding: 4%;
+            background: white;
+            padding-bottom: 2%;
+            padding-top: 8%;
+            position: relative;
+            &:nth-child(odd) {
+                border-right: 1px solid #ddd;
+            }
+            &:nth-child(even) {
+                border-bottom: 1px solid #ddd;
+                border-right: 1px solid white;
+            }
+            .pic {
+                text-align: center;
+                em {
+                    position: absolute;
+                    top: 10px;
+                    left: 15px;
+                    width: 33px;
+                    padding: 2px 0;
+                    text-align: center;
+                    font-size: 12px;
+                    background: #f84343;
+                    color: white;
+                }
+                img{
+                    max-width:80%;
+                }
+            }
+            .tit {
+                color: #666;
+                font-size: 12px;
+                margin: 4px 0;
+                margin-bottom: -2px;
+            }
+            .pri-buy {
+                line-height: 27px;
+                position: relative;
+                span {
+                    color: #f84343;
+                    font-family: arial;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                em,
+                i {
+                    display: inline-block;
+                    position: relative;
+                }
+                em {
+                    @extend .bg-like;
+                    position: relative;
+                    top: 13px;
+                    left: -8px;
+                    transform: scale(0.35);
+                }
+                .eon {
+                    @extend .bg-like-on;
+                }
+                i {
+                    @extend .bg-car;
+                    float: right;
+                    position: absolute;
+                    top: 12px;
+                    transform: scale(0.5);
+                    right: -12px;
+                }
+                .ion {
+                    @extend .bg-car-on;
+                    top: 3px;
+                    float: right;
+                    padding-left: 56px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+#change-seller-cggood {
+    overflow: hidden;
+    height: 46px;
+    padding-top: 5px;
+    border-top: 1px solid $bor;
+    border-bottom: 1px solid $bor;
+    position: relative;
+    border-top: $bor;
+    padding: 10px;
+    ul {
+        width: 92%;
+        float: left;
+        white-space: nowrap;
+        overflow-x:scroll;
+        overflow-y:hidden;
+        height: 30px;
+        .box {
+        	white-space: nowrap;
+            height: 30px;
+        }
+        li {
+        	display: inline-block;
+            padding: 5px 9px;
+            border: $bor;
+            border-radius: 15px;
+            margin-right: 2rem;
+        }
+        .on{
+        	background:$red;
+        	color: white;
+        }
+    }
+    .right {
+        width: 8%;
+        float: right;
+        height: 45px;
+        line-height: 50px;
+        text-align: center;
+        border-left: 1px solid #dcdcdc;
+        position: relative;
+        top: -10px;
+        em {
+        	position: relative;
+        	left: 10px;
+            zoom: 0.5;
+            display: inline-block;
+            @extend .bg-goright;
+        }
+    }
+}

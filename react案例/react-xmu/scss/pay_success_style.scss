@@ -1,0 +1,26 @@
+#pay-success-style {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #f5f5f5;
+    .success-c {
+        display: inline-block;
+        width: 104px;
+        height: 201px;
+        @extend .bg-gwc-right;
+        zoom: 0.55;
+        margin-top: 136px;
+    }
+    .success-text {
+        @extend .mt8;
+        @extend .fontSize24;
+        color: #3bc75c;
+    }
+    .success-p {
+        @extend .fontSize18;
+        color: #000000;
+    }
+}

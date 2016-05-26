@@ -1,0 +1,24 @@
+#index-brand {
+    overflow-x: scroll;
+    margin-top: 8px;
+    margin-bottom: 13px;
+    ul {
+        white-space: nowrap;
+        text-align: left;
+        width: 100rem;
+        li {
+            margin-right: 0.5rem;
+            width: 3.42rem;
+            float: left;
+            display: inline;
+            position: relative;
+            &:last-child {
+                margin-right: 0;
+            }
+            img {
+                width: 135px !important;
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+#pay-money-sendseller {
+    color: $aaa;
+    font-size: 14px;
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    border-bottom:$bor;
+    span {
+        color: #000;
+    }
+    .seller {
+        flex: 4;
+    }
+    .re-change {
+        text-align: right;
+        font-size: 13px;
+        position: relative;
+        i {
+            position: absolute;
+            top: -9px;
+        }
+    }
+}

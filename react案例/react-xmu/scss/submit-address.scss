@@ -1,0 +1,30 @@
+$bor:1px solid #dcdcdc;
+#submit-address {
+    font-size: 14px;
+    color: #333;
+    padding: 14px 10px;
+    background: white;
+    border-bottom: $bor;
+    margin-bottom: 15px;
+    .item {
+        display: flex;
+    }
+    em {
+        color: #a1a1a1;
+        flex: 1;
+        text-align: justify;
+        a {
+            width: 100%;
+            display: inline-block;
+        }
+    }
+    span {
+        flex: 3;
+    }
+    .man {
+        flex: 8;
+    }
+    .edit {
+        position: relative;
+    }
+}

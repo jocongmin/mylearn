@@ -1,0 +1,52 @@
+$fontc:#989898;
+$red:#f84a4a;
+$bor:1px solid #dcdcdc;
+#submit-buypro-list {
+    background: white;
+    margin-bottom: 10px;
+    border-top:$bor;
+    .title{
+        padding:10px;
+        border-bottom:$bor;
+    }
+    .pic {
+        display: block;
+        height: 79px;
+        width: auto;
+    }
+    em {
+        text-align: right;
+    }
+    .item {
+        border-bottom: $bor;
+        padding: 10px 15px;
+    }
+    .info {
+        position: relative;
+        flex: 2;
+        .tit {
+            span {
+                color: #000;
+                font-size: 15px;
+            }
+            em {
+                color: $fontc;
+            }
+        }
+    }
+    .guige {
+        color: $fontc;
+    }
+    .much {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        span {
+            font-size: 15px;
+        }
+        em {
+            color: $red;
+            font-size: 16px;
+        }
+    }
+}
