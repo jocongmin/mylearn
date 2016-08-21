@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style media="screen">
+    .check {
+        background: none;
+        border: none;
+        outline: none;
+        border: 1px solid #ddd;
+        width: 15px;
+        height: 15px;
+        border-radius: 5px;
+    }/**构建checked新样式最好直接在原input上写样式就好，不要利用其它元素包括before、after构建样式外表，直接在input上构建，这样才不容易出现checked未选中状态**/
+</style>
+
+<body>
+    <input class='check' type="checkbox">
+    <input type="button" class="btn">
+</body>
+<script type="text/javascript">
+    var btn = document.querySelector('.btn')
+    var chk = document.querySelector('.check')
+    btn.onclick = function() {
+        var is = chk.getAttribute('checked')
+        if (is == 'true') {
+            chk.removeAttribute('checked') //只有删除checked属性才能删除打勾，才能真正的没有选中
+        } else if (is == null) {
+            chk.setAttribute('checked', true)
+        } else if (is == 'false') {
+            chk.setAttribute('checked', true)
+        } else {
+            console.log(is)
+        }
+    }
+</script>
+
+</html>
